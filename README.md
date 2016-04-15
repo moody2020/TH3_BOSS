@@ -6,7 +6,7 @@
 
 # Let's install the bot.
 
-git clone https://github.com/SAJJAD94/ASD_KARBALA
+git clone https://github.com/SAJJAD94/ASD_KARBALA.git
 
 cd ASD_KARBALA
 

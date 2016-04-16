@@ -1,41 +1,34 @@
-# [ASD_KARBALA](https://telegram.me/joinchat/C3vJiT3S817HdIPjZpFXHg)
+This is library that handles telegram api and protocol.
 
+Current versions:
 
-*******************************************************************
-```sh
+- scheme.tl: Layer 38
+- encrypted_scheme.tl: Layer 23
 
-# Let's install the bot.
+### API, Protocol documentation
 
-git clone https://github.com/SAJJAD94/ASD_KARBALA.git
+Documentation for Telegram API is available here: https://core.telegram.org/api
 
-cd ASD_KARBALA
+Documentation for MTproto protocol is available here: https://core.telegram.org/mtproto
 
-chmod +x launch.sh
+### Installation
 
-./launch.sh install
+Clone GitHub Repository
 
-./launch.sh 
+     git clone --recursive  https://github.com/vysheng/tgl.git && cd tgl
 
-# Enter a phone number & confirmation code.
-```
-### One command
-To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
-```sh
+#### Linux and BSDs
 
-git clone https://github.com/SAJJAD94/ASD_KARBALA.git && cd ASD_KARBALA && chmod +x launch.sh && ./launch.sh install && ./launch.sh
-```
+Install libs: openssl, zlib
+if you want to use provided net/timers then install libevent and add --enable-libevent key to configure
 
-* * *
+You can also avoid the OpenSSL dependency: Install gcrypt (>= 1.60, Debian derivates know it as "libgcrypt20-dev"), and add --disable-openssl key to configure
 
-### Realm configuration
+Then,
 
-After you run the bot for first time, send it `!id`. Get your ID and stop the bot.
+     ./configure
+     make
 
-Open ./data/config.lua and add your ID to the "sudo_users" section in the following format:
-```
-  sudo_users = {
-    18293081,
-    0,
-    YourID
-  }
-```
+### Contacts 
+If you would like to ask a question, you can write to my telegram or to the github (or both). To contact me via telegram, you should use import_card method with argument 000653bf:0738ca5d:5521fbac:29246815:a27d0cda
+

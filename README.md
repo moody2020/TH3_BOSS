@@ -1,10 +1,13 @@
-# [ASD_KARBALA](https://telegram.me/joinchat/C3vJiT3S817HdIPjZpFXHg)
+قـــــنأْةَ ألسـورسَ ✋🏿👇🏻Source channel
+# [ASD_KARBALA](https://telegram.me/S94IQ)
 
 
 *******************************************************************
 ```sh
 
 # Let's install the bot.
+
+sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes
 
 git clone https://github.com/SAJJAD94/ASD_KARBALA.git
 

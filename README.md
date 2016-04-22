@@ -86,8 +86,8 @@ Open ./data/config.lua and add your ID to the "sudo_users" section in the follow
 ```
 😘 مـبروَك أصبَحتـَ مـطورَ بوـتكَ لتوأصل معي 
 
-#Dev : @SAJJADNOORI
-#Dev_BOT : @S94_BOT
-#Dev_Channel : @S94IQ
+#Dev : # [@SAJJADNOORI](https://telegram.me/SAJJADNOORI)
+#Dev_BOT : # [@S94_BOT](https://telegram.me/S94_BOT)
+#Dev_Channel : # [@S94IQ](https://telegram.me/S94IQ)
 
 عندكَ فكره تطوير السورس او البوت تفظل هنأَ☝🏿️

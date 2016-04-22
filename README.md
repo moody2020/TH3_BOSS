@@ -91,3 +91,4 @@ Open ./data/config.lua and add your ID to the "sudo_users" section in the follow
 #Dev_Channel :  [@S94IQ](https://telegram.me/S94IQ)
 
 عندكَ فكره تطوير السورس او البوت تفظل هنأَ☝🏿️
+You have an idea to develop Alsoors or bot prefer ☝🏿️✋🏿

@@ -49,6 +49,7 @@ Congratulations, you better bot
 To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
 
 لتنصيب البوـب بكوَدَ واحد فقط َ ✋🏿😘👇🏿 To install one code
+
 فتح ترمنال وخلي 👇🏿 Open Terminal and vinegary
 
 sudo apt-get update 
@@ -56,6 +57,7 @@ sudo apt-get update
 ورهأَ خلي 👇🏿 And vinegary
 
 redis-server
+
 تركه مفتوح✋🏿 Leave it open Terminal
 
 وفتح ترمنال ثاني وخلي 👇🏿 Open Terminal and second vinegary

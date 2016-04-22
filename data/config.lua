@@ -36,10 +36,6 @@ do local _ = {
     "en-insta",
     "ar-info",
     "en-info",
-    "ar-azan",
-    "en-azan",
-    "ar-time",
-    "en-time",
     "ar-textphoto",
     "en-textphoto",
     "ar-lock-bot",
@@ -58,8 +54,6 @@ do local _ = {
     "en-map",
     "ar-voice",
     "en-voice",
-    "ar-user",
-    "en-user",
     "ar-getlink",
     "en-getlink",
     "ar-getfile",
@@ -84,7 +78,7 @@ do local _ = {
     data = "data/moderation.json"
   },
   sudo_users = {
-    18293081
+    18293081,
   }
 }
 return _

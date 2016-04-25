@@ -116,7 +116,7 @@ local user_num = "❣ عدد الاعضاء: "..result.participants_count.."\n"
 local kicked_num = "❣ الاعضاء الاكثر تفاعل: "..result.kicked_count.."\n"
 local channel_id = "❣ ايدي المجموعه: "..result.peer_id.."\n"
 if result.username then
-	channel_username = "Username: @"..result.username
+	channel_username = "❣ معرف المجموعه : @"..result.username
 else
 	channel_username = ""
 end
@@ -817,7 +817,7 @@ local function callbackres(extra, success, result)
   local member_id = result.peer_id
   local member_username = "@"..result.username
   local get_cmd = extra.get_cmd
-	if get_cmd == "res" then
+	if get_cmd == "الايدي" then
 		local user = result.peer_id
 		local name = string.gsub(result.print_name, "_", " ")
 		local channel = 'channel#id'..extra.channelid
@@ -1296,10 +1296,10 @@ local function run(msg, matches)
 			resolve_username(username,  callbackres, cbres_extra)
 		end
 
-		if matches[1] == 'ايدي' and is_owner(msg) then
+		if matches[1] == 'الايدي' and is_owner(msg) then
 			local cbres_extra = {
 				channelid = msg.to.id,
-				get_cmd = 'res'
+				get_cmd = 'الايدي'
 			}
 			local username = matches[2]
 			local username = username:gsub("@","")
@@ -1587,11 +1587,11 @@ local function run(msg, matches)
 				channel_set_about(receiver, about_text, ok_cb, false)
 				return "❌ تم مسح وصف المجموعه  ✔️"
 			end
-			if matches[2] == 'اعدادات الوسائط' then
+			if matches[2] == 'المكتومين' then
 				chat_id = msg.to.id
 				local hash =  'mute_user:'..chat_id
 					redis:del(hash)
-				return "❌ تم مسح قائمه اعدادات الوسائط ✔️"
+				return "❌ تم مسح قائمه المكتومين ✔️"
 			end
 			if matches[2] == 'المعرف' and is_admin1(msg) then
 				local function ok_username_cb (extra, success, result)
@@ -1897,7 +1897,7 @@ local function run(msg, matches)
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup muteslist")
 			return mutes_list(chat_id)
 		end
-		if matches[1] == "اعدادات الوسائط" and is_momod(msg) then
+		if matches[1] == "المكتومين" and is_momod(msg) then
 			local chat_id = msg.to.id
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup mutelist")
 			return muted_user_list(chat_id)
@@ -2032,7 +2032,7 @@ return {
 	"^(مسح) (.*)$",
 	"^[#!/]([Hh]elpp)$",
 	"^(اعدادات الوسائط)$",
-	"^(اعدادات الوسائط)$",
+	"^(المكتومين)$",
     "[#!/](mp) (.*)",
 	"[#!/](md) (.*)",
     "^(https://telegram.me/joinchat/%S+)$",

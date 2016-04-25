@@ -1,5 +1,14 @@
+--[[ 
+▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
+▀▄ ▄▀                                      ▀▄ ▄▀ 
+▀▄ ▄▀    BY SAJJAD NOORI                   ▀▄ ▄▀ 
+▀▄ ▄▀     BY SAJAD NOORI (@SAJJADNOORI)    ▀▄ ▄▀ 
+▀▄ ▄▀ JUST WRITED BY SAJJAD NOORI          ▀▄ ▄▀   
+▀▄ ▄▀     KICK BOT  : طرد البوت            ▀▄ ▄▀ 
+▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
+--]]
 do
--- Will leave the group if be added
+
 local function run(msg, matches)
 local bot_id = our_id 
 local receiver = get_receiver(msg)
@@ -15,7 +24,7 @@ end
  
 return {
   patterns = {
-    "^[#!/](leave)$",
+    "^(leave)$",
     "^!!tgservice (.+)$",
   },
   run = run

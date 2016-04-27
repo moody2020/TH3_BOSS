@@ -49,32 +49,12 @@ local function run (msg, matches)
   end
 
   local chatId = msg.to.id
-  if is_momod(msg) and matches[1] == 'قفل البوت' then
-    local sambutan = "❤️ آهلآَ وسَهلآَ كبَدَ روَحي 😘"..nama.."\n🌹 نَـورتَ مجـموَعـهْ 👥 '"..string.gsub(msg.to.print_name, "_", " ").."'\n🌹 يرجى اتباع القوانين لتجنب الطرد 😉 \n"
-      local text = sambutan.."لروئية قوانين المجموعة /القوانين 🙏🏿      "
-      local text = text..""
-      local text = text.."                                               "
-      local text = text.."للخروج من المجموعة /مغادره ☹️"
-      local text = text..""
-      local text = text.."                                               "
-      local text = text.."قنـــأتـنأ تأبعونأَ هنـَأ [فضولك حيخليك تدخل هنا👇🏻]"
-      local text = text.."https://telegram.me/joinchat/ARchWT01E5zHFx043_WiTw"
-      local receiver = get_receiver(msg)
-      send_large_msg(receiver, text, ok_cb, false)
+  if matches[1] == 'قفل البوتات' then
+    enableAntiBot(chatId)
   return 'تـمِ  ✔️ قـفِلَ أضــأفهَ ألــبوَتَِــأت 🔐✋🏻'
   end
-  if is_momod(msg) and matches[1] == 'فتح البوت' then
-    local sambutan = "❤️ آهلآَ وسَهلآَ كبَدَ روَحي 😘"..nama.."\n🌹 نَـورتَ مجـموَعـهْ 👥 '"..string.gsub(msg.to.print_name, "_", " ").."'\n🌹 يرجى اتباع القوانين لتجنب الطرد 😉 \n"
-      local text = sambutan.."لروئية قوانين المجموعة /القوانين 🙏🏿      "
-      local text = text..""
-      local text = text.."                                               "
-      local text = text.."للخروج من المجموعة /مغادره ☹️"
-      local text = text..""
-      local text = text.."                                               "
-      local text = text.."قنـــأتـنأ تأبعونأَ هنـَأ [فضولك حيخليك تدخل هنا👇🏻]"
-      local text = text.."https://telegram.me/joinchat/ARchWT01E5zHFx043_WiTw"
-      local receiver = get_receiver(msg)
-      send_large_msg(receiver, text, ok_cb, false)
+  if matches[1] == 'فتح البوتات' then
+    disableAntiBot(chatId)
   return 'تـمِ  ✔️ فَتـحَ أضــأفهَ ألــبوَتَِــأت 🔓👍'
   end
   if matches[1] == 'chat_add_user' or matches[1] == 'chat_add_user_link' then
@@ -101,8 +81,8 @@ return {
     '/bot unlock: unlock add bots to supergroup'
   },
   patterns = {
-    '^(قفل البوت)$',
-    '^(فتح البوت)$',
+    '^(قفل البوتات)$',
+    '^(قفل البوتات)$',
     '^!!tgservice (chat_add_user)$',
     '^!!tgservice (chat_add_user_link)$'
   },

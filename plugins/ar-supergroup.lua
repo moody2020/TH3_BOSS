@@ -328,11 +328,11 @@ local function lock_group_rtl(msg, data, target)
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
   if group_rtl_lock == 'yes' then
-    return '😠 المغادره بالفعل مقفوله 🔐 ✋🏻'
+    return '😠 الاضافه الجماعيه بالفعل مقفوله 🔐 ✋🏻'
   else
     data[tostring(target)]['settings']['lock_rtl'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'تم ✔️ قفل المغادره 🔐 ✋🏻'
+    return 'تم ✔️ قفل الاضافه الجماعيه 🔐 ✋🏻'
   end
 end
 
@@ -342,11 +342,11 @@ local function unlock_group_rtl(msg, data, target)
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
   if group_rtl_lock == 'no' then
-    return '😠 المغادره بالفعل مفتوحه 🔓✔️'
+    return '😠 الاضافه الجماعيه بالفعل مفتوحه 🔓✔️'
   else
     data[tostring(target)]['settings']['lock_rtl'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'تم ✔️ فتح المغادره 🔓🌹'
+    return 'تم ✔️ فتح الاضافه الجماعيه 🔓🌹'
   end
 end
 
@@ -412,11 +412,11 @@ local function enable_strict_rules(msg, data, target)
   end
   local group_strict_lock = data[tostring(target)]['settings']['strict']
   if group_strict_lock == 'yes' then
-    return '😠 جميع الاعدادت بالفعل مقفوله 🔐✋🏻'
+    return '😠 التحذير بالفعل مقفول 🔐✋🏻'
   else
     data[tostring(target)]['settings']['strict'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'تم ✔️ قفل جميع الاعدادات 🔐✋🏻'
+    return 'تم ✔️ قفل التحذير  🔐✋🏻'
   end
 end
 
@@ -426,11 +426,11 @@ local function disable_strict_rules(msg, data, target)
   end
   local group_strict_lock = data[tostring(target)]['settings']['strict']
   if group_strict_lock == 'no' then
-    return '😠 حميع الاعدادات بالفعل مفتوحه 🔓✔️'
+    return '😠 التحذير بالفعل مفتوح 🔓✔️'
   else
     data[tostring(target)]['settings']['strict'] = 'no'
     save_data(_config.moderation.data, data)
-    return '✔️ تم فتح جميع الاعدادات 🔓⭕️'
+    return '✔️ تم فتح التحذير 🔓⭕️'
   end
 end
 --End supergroup locks
@@ -1231,7 +1231,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return "❣ ايدي المجموعه"..string.gsub(msg.to.print_name, "_", " ")..": "..msg.to.id
+				return "❣ ايدي مجموعة "..string.gsub(msg.to.print_name, "_", " ")..": "..msg.to.id
 			end
 		end
 
@@ -1629,7 +1629,7 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked member ")
 				return lock_group_membermod(msg, data, target)
 			end
-			if matches[2]:lower() == 'المغادره' then
+			if matches[2]:lower() == 'الاضافه الجماعيه' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked rtl chars. in names")
 				return lock_group_rtl(msg, data, target)
 			end
@@ -1669,7 +1669,7 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked member ")
 				return unlock_group_membermod(msg, data, target)
 			end
-			if matches[2]:lower() == 'المغادره' then
+			if matches[2]:lower() == 'الاضافه الجماعيه' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked RTL chars. in names")
 				return unlock_group_rtl(msg, data, target)
 			end

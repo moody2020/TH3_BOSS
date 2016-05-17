@@ -10,7 +10,8 @@
 do
 
 function run(msg, matches)
-  return [[ 
+local reply_id = msg['id']
+local S = [[ 
 قبل لتشوف الاوامر تابع قناة البوت @S94IQ ❤️💋
 
 ✔️تعمل جميع الاوامر بدون وضع / او !
@@ -41,14 +42,14 @@ function run(msg, matches)
 #Dev_bot : @S94_BOT
 #Dev_Channel : @S94IQ
  ]]
-
+reply_msg(reply_id, S, ok_cb, false)
 end
 
 return {
 description = "Help list", 
 usage = "Help list",
 patterns = {
-"(مساعدة2)"
+"^(م2)$",
 },
 run = run 
 }

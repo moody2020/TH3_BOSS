@@ -10,8 +10,9 @@
 do
 
 local function run(msg, matches)
-if is_sudo(msg) and matches[1]== "اوامر المطور" then
-return [[  قبل لتشوف الاوامر تابع قناة السورس @S94IQ ❤️💋
+local reply_id = msg['id']
+if is_sudo(msg) and matches[1]== "م المطور" then
+local S = [[  قبل لتشوف الاوامر تابع قناة السورس @S94IQ ❤️💋
 
 ✔️تعمل جميع الاوامر بدون وضع / او !
 ا🔸➖🔹➖🔸➖🔹➖🔸
@@ -46,10 +47,12 @@ return [[  قبل لتشوف الاوامر تابع قناة السورس @S94I
 #Dev_bot : @S94_BOT
 #Dev_Channel : @S94IQ
 ]]
+reply_msg(reply_id, S, ok_cb, false)
 end
 
 if not is_sudo(msg) then
-return "للمطورين فقط 😎🖕🏿"
+local S = "للمطورين فقط 😎🖕🏿"
+reply_msg(reply_id, S, ok_cb, false)
 end
 
 end
@@ -57,7 +60,7 @@ return {
 description = "Help list", 
 usage = "Help list",
 patterns = {
-"(اوامر المطور)"
+"^(م المطور)$",
 },
 run = run 
 }

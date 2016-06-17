@@ -1,12 +1,12 @@
 --[[ 
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
-▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY SAJJAD NOORI                   ▀▄ ▄▀ 
-▀▄ ▄▀     BY SAJAD NOORI (@SAJJADNOORI)    ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY SAJJAD NOORI          ▀▄ ▄▀   
-▀▄ ▄▀          dev1  : dev                 ▀▄ ▄▀ 
+▀▄ ▄▀                                       ▀▄ ▄▀ 
+▀▄ ▄▀       BY MOHAMMED HISHAM              ▀▄ ▄▀ 
+▀▄ ▄▀ BY MOHAMMEDHISHAM (@oOMOOMOo)         ▀▄ ▄▀          
+▀▄ ▄▀ JUST WRITED BY MOHAMMED HISHAM        ▀▄ ▄▀   
+▀▄ ▄▀          dev   : dev                  ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
---]]
+--]] 
 do
 
 function run(msg, matches)
@@ -17,8 +17,16 @@ return [[
 يعمل البوت على مجموعات سوبر تصل الى5k عضو 🔷
 
      ≪تم صنع البوت بواسطة المطور≫
-                      『 @SAJJADNOORI 』
-            🔹#Dev #SAJJADNOORI🔹
+                      『  @oOMOOMOo 』
+                      
+                      🔶DEV :🔶DEV : @oOMOOMOo
+                      
+                      🔶DEV : @DEVIRAQ_BOT
+                      
+                      🔶Group Link : @ll98kll
+                      
+                      🔶Group Channel : @oOBOBOo
+                      
 ]]
 end
 

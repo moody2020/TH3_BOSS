@@ -1,10 +1,10 @@
 --[[ 
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
 ▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY SAJJAD NOORI                   ▀▄ ▄▀ 
-▀▄ ▄▀     BY SAJAD NOORI (@SAJJADNOORI)    ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY SAJJAD NOORI          ▀▄ ▄▀   
-▀▄ ▄▀          Orders  : الاوامر            ▀▄ ▄▀ 
+▀▄ ▄▀    BY MOHAMMED HISHAM                ▀▄ ▄▀ 
+▀▄ ▄▀   BY MOHAMMEDHISHAM (@oOMOOMOo)      ▀▄ ▄▀ 
+▀▄ ▄▀ JUST WRITED BY MOHAMMED HISHAM       ▀▄ ▄▀   
+▀▄ ▄▀   orders   :    الاوامر                 ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
 local function check_member_super(cb_extra, success, result)
@@ -12,7 +12,7 @@ local function check_member_super(cb_extra, success, result)
   local data = cb_extra.data
   local msg = cb_extra.msg
   if success == 0 then
-	send_large_msg(receiver, "👌🏻لتلعَب بكَيفك فقَطَ أَلمطور يحَق لهَ✔️")
+	send_large_msg(receiver, "👌🏻لتلعَب بكَيفك فقَطَ أَلمطور يحَق ل✔️")
   end
   for k,v in pairs(result) do
     local member_id = v.peer_id
@@ -111,12 +111,12 @@ end
 --Get and output info about supergroup
 local function callback_info(cb_extra, success, result)
 local title ="♨️ معلومات عن مجموعة⁉️: ["..result.title.."]\n\n"
-local admin_num = "❣ عدد الادمنيه: "..result.admins_count.."\n"
-local user_num = "❣ عدد الاعضاء: "..result.participants_count.."\n"
-local kicked_num = "❣ الاعضاء الاكثر تفاعل: "..result.kicked_count.."\n"
-local channel_id = "❣ ايدي المجموعه: "..result.peer_id.."\n"
+local admin_num = "🔶 عدد الادمنيه: "..result.admins_count.."\n"
+local user_num = "🔶 عدد الاعضاء: "..result.participants_count.."\n"
+local kicked_num = "🔶 الاعضاء الاكثر تفاعل: "..result.kicked_count.."\n"
+local channel_id = "🔶 ايدي المجموعه: "..result.peer_id.."\n"
 if result.username then
-	channel_username = "❣ معرف المجموعه : @"..result.username
+	channel_username = "🔶 معرف المجموعه : @"..result.username
 else
 	channel_username = ""
 end
@@ -528,7 +528,7 @@ function show_supergroup_settingsmod(msg, target)
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "⚙ اعدادات المجموعه 👥\n❣ قفل الروابط : "..settings.lock_link.."\n❣ قفل التكرار: "..settings.flood.."\n❣ عدد التكرار  : "..NUM_MSG_MAX.."\n❣ قفل الكلايش الطويله: "..settings.lock_spam.."\n❣ قفل اللغه العربيه: "..settings.lock_arabic.."\n❣ قفل الاضافه: "..settings.lock_member.."\n❣ قفل المغادره: "..settings.lock_rtl.."\n❣ قفل الملصقات: "..settings.lock_sticker.."\n❣ المراقبه: "..settings.public.."\n❣ قفل جميع الاعدادات: "..settings.strict
+  local text = "⚙ اعدادات المجموعه 👥\n🔶  قفل الروابط : "..settings.lock_link.."\n🔶  قفل التكرار: "..settings.flood.."\n🔶  عدد التكرار  : "..NUM_MSG_MAX.."\n🔶  قفل الكلايش الطويله: "..settings.lock_spam.."\n🔶  قفل اللغه العربيه: "..settings.lock_arabic.."\n🔶  قفل الاضافه: "..settings.lock_member.."\n🔶  قفل المغادره: "..settings.lock_rtl.."\n🔶  قفل الملصقات: "..settings.lock_sticker.."\n🔶  المراقبه: "..settings.public.."\n🔶  قفل جميع الاعدادات: "..settings.strict
   return text
 end
 
@@ -1231,7 +1231,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return "❣ ايدي مجموعة "..string.gsub(msg.to.print_name, "_", " ")..": "..msg.to.id
+				return "🔶 ايدي مجموعة "..string.gsub(msg.to.print_name, "_", " ")..": "..msg.to.id
 			end
 		end
 
@@ -1279,7 +1279,7 @@ local function run(msg, matches)
 			end
 			local group_link = data[tostring(msg.to.id)]['settings']['set_link']
 			if not group_link then
-				return "❓يرجئ ارسال [/تغير الرابط] لانشاء رابط المجموعه👍🏻✔️"
+				return "❓يرجئ ارسال [/تغير الرابط] لانشاء رابط المجموعه✔️"
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
 			return "⁉️ رابط المجموعه 👥:\n"..group_link
@@ -1417,7 +1417,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_owner(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق لهَ✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق ل✔️"
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -1461,7 +1461,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_owner(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق لهَ✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق ل✔️"
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -1551,7 +1551,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_momod(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير  يحَق لهَ✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير  يحَق ل✔️"
 			end
 			if matches[2] == 'الادمنيه' then
 				if next(data[tostring(msg.to.id)]['moderators']) == nil then

@@ -12,7 +12,7 @@ local function check_member_super(cb_extra, success, result)
   local data = cb_extra.data
   local msg = cb_extra.msg
   if success == 0 then
-	send_large_msg(receiver, "👌🏻لتلعَب بكَيفك فقَطَ أَلمطور يحَق ل✔️")
+	send_large_msg(receiver, "👌🏻لتلعَب بكَيفك فقَطَ أَلمطور يحَق ✔️")
   end
   for k,v in pairs(result) do
     local member_id = v.peer_id
@@ -1417,7 +1417,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_owner(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق ل✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق ✔️"
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -1461,7 +1461,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_owner(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق ل✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق ✔️"
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -1551,7 +1551,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_momod(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير  يحَق ل✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير  يحَق ✔️"
 			end
 			if matches[2] == 'الادمنيه' then
 				if next(data[tostring(msg.to.id)]['moderators']) == nil then
@@ -2048,4 +2048,4 @@ return {
   pre_process = pre_process
 }
 --End supergrpup.lua
---By @SAJJADNOORI
+--By @oOMOOMOo

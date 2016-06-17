@@ -1,10 +1,10 @@
 --[[ 
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
-▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY SAJJAD NOORI                   ▀▄ ▄▀ 
-▀▄ ▄▀     BY SAJAD NOORI (@SAJJADNOORI)    ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY SAJJAD NOORI          ▀▄ ▄▀   
-▀▄ ▄▀          Welcome  : ترحيب            ▀▄ ▄▀ 
+▀▄ ▄▀                                       ▀▄ ▄▀ 
+▀▄ ▄▀       BY MOHAMMED HISHAM              ▀▄ ▄▀ 
+▀▄ ▄▀ BY MOHAMMEDHISHAM (@oOMOOMOo)         ▀▄ ▄▀          
+▀▄ ▄▀ JUST WRITED BY MOHAMMED HISHAM        ▀▄ ▄▀   
+▀▄ ▄▀          Welcome  : ترحيب              ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]] 
 
@@ -69,17 +69,17 @@ local function description_rules(msg, nama)
          rules = data[tostring(msg.to.id)]["rules"]
          rules = "\nRules :\n"..rules.."\n"
       end
-      local sambutan = "❤️ آهلآَ وسَهلآَ كبَدَ روَحي 😘"..nama.."\n🌹 نَـورتَ مجـموَعـهْ 👥 '"..string.gsub(msg.to.print_name, "_", " ").."'\n🌹 يرجى اتباع القوانين لتجنب الطرد 😉 \n"
-      local text = sambutan.."لروئية قوانين المجموعة /القوانين 🙏🏿      "
+      local sambutan = "❤️ آهلآَ وسَهلآَ جـرارة  كـلـبـي 😘"..nama.."\n🌹 نَـورتَ مجـموَعـهْ 👥 '"..string.gsub(msg.to.print_name, "_", " ").."'\n🌹 يرجى اتباع القوانين لتجنب الطرد 😉 \n"
+      local text = sambutan.."لروئية قوانين المجموعة  القوانين 🙏🏿      "
       local text = text..""
       local text = text.."                                               "
-      local text = text.."للخروج من المجموعة /مغادره ☹️"
-      local text = text..""
+      local text = text.."للخروج من المجموعة  مغادره☹️"
+      local text = text.."                                     "
       local text = text.."                                               "
-      local text = text.."قنـــأتـنأ تأبعونأَ هنـَأ [فضولك حيخليك تدخل هنا👇🏻]"
-      local text = text..""
+      local text = text.."    🔶 مـطـور الـبـوت : @oOMOOMOo    "
+      local text = text.."                                      "
       local text = text.."                                               "
-      local text = text.."@antrohi @S94IQ \n✋🏿☝🏿️"
+      local text = text.." \n✋🏿🏿️"
       local receiver = get_receiver(msg)
       send_large_msg(receiver, text, ok_cb, false)
    end
@@ -108,7 +108,7 @@ local function run(msg, matches)
       description_rules(msg, nama)
    elseif matches[1] == "chat_del_user" then
        local bye_name = msg.action.user.first_name
-       return 'وداعا عزيزي 🌹  '..bye_name
+       return 'وداعا جـرارة كـلـبـي 🌹  '..bye_name
    end
 end
 
@@ -123,4 +123,4 @@ return {
    run = run
 }
 
--- Dev by @SAJJADNOORI
+-- Dev by  @oOBOBOo

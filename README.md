@@ -80,7 +80,7 @@ Open ./data/config.lua and add your ID to the "sudo_users" section in the follow
 🔶 لتصبح مطور بوتك غير الايدي خاص كونفج بايديك 🔶
 ```
   sudo_users = {
-    18293081,
+    226861861,
     0,
     YourID
   }

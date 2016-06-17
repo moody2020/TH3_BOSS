@@ -1,16 +1,16 @@
 --[[ 
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
 ▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY SAJJAD NOORI                   ▀▄ ▄▀ 
-▀▄ ▄▀     BY SAJAD NOORI (@SAJJADNOORI)    ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY SAJJAD NOORI          ▀▄ ▄▀   
-▀▄ ▄▀     ME BOT  : شنو اني                ▀▄ ▄▀ 
+▀▄ ▄▀    BY MOHAMMED HISHAM                ▀▄ ▄▀ 
+▀▄ ▄▀   BY MOHAMMEDHISHAM (@oOMOOMOo)      ▀▄ ▄▀ 
+▀▄ ▄▀ JUST WRITED BY MOHAMMED HISHAM       ▀▄ ▄▀   
+▀▄ ▄▀         ME   :  موقعي               ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
 do
 
 local function run(msg, matches)
-  if matches[1] == 'شنو اني' then
+  if matches[1] == 'موقعي' then
     if is_sudo(msg) then
     send_document(get_receiver(msg), "./files/me/sudo.webp", ok_cb, false)
       return "انت المطور مالتي 😻🙊"
@@ -22,7 +22,7 @@ local function run(msg, matches)
       return "انت مدير المجموعه 🌺😍"
     elseif is_momod(msg) then
     send_document(get_receiver(msg), "./files/me/moderator.webp", ok_cb, false)
-      return "انت ادمن 👍🏻☺️"
+      return "انت ادمن ☺️"
     else
     send_document(get_receiver(msg), "./files/me/member.webp", ok_cb, false)
       return "انت مجرد عضو 😒💔"
@@ -32,8 +32,8 @@ end
 
 return {
   patterns = {
-    "^(شنو اني)$",
-    "^(شنو اني)$"
+    "^(موقعي)$",
+    "^(موقعي)$"
     },
   run = run
 }

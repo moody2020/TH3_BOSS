@@ -1,10 +1,10 @@
 --[[ 
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
 ▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY SAJJAD NOORI                   ▀▄ ▄▀ 
-▀▄ ▄▀     BY SAJAD NOORI (@SAJJADNOORI)    ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY SAJJAD NOORI          ▀▄ ▄▀   
-▀▄ ▄▀       broadcast  : اذاعه             ▀▄ ▄▀ 
+▀▄ ▄▀    BY MOHAMMED HISHAM                ▀▄ ▄▀ 
+▀▄ ▄▀     BY MOHAMMEDHISHAM (@oOMOOMOo)    ▀▄ ▄▀ 
+▀▄ ▄▀ JUST WRITED BY MOHAMMED HISHAM       ▀▄ ▄▀   
+▀▄ ▄▀                                      ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
 local function run(msg, matches)

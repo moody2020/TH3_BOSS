@@ -12,7 +12,7 @@ if ( msg.text ) then
    
 end 
 
--- #DEV @S94IQ
+-- OMOOMOo 
 
 end 
 

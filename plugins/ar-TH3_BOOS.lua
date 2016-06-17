@@ -4,7 +4,7 @@
 ▀▄ ▄▀    BY SAJJAD NOORI                   ▀▄ ▄▀ 
 ▀▄ ▄▀     BY SAJAD NOORI (@SAJJADNOORI)    ▀▄ ▄▀ 
 ▀▄ ▄▀ JUST WRITED BY SAJJAD NOORI          ▀▄ ▄▀   
-▀▄ ▄▀          Dev  : المطور               ▀▄ ▄▀ 
+▀▄ ▄▀          DEV  :       الاصدار         ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
 

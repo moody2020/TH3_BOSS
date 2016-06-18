@@ -16,6 +16,8 @@ redis-server
 تركه مفتوح    
 🔸➖🔹➖🔸➖🔹➖
 وفتح ترمنال ثاني وخلي    
+🔸➖🔹➖🔸➖🔹➖
+ورهأ خلي    
 
 sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes
 🔸➖🔹➖🔸➖🔹➖

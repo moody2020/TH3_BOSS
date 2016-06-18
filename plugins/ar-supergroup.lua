@@ -1,4 +1,4 @@
---[[ 
+ --[[ 
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
 ▀▄ ▄▀                                      ▀▄ ▄▀ 
 ▀▄ ▄▀    BY MOHAMMED HISHAM                ▀▄ ▄▀ 
@@ -12,7 +12,7 @@ local function check_member_super(cb_extra, success, result)
   local data = cb_extra.data
   local msg = cb_extra.msg
   if success == 0 then
-	send_large_msg(receiver, "👌🏻لتلعَب بكَيفك فقَطَ أَلمطور يحَق ✔️")
+	send_large_msg(receiver, "👌🏻لتلعَب بكَيفك فقَطَ أَلمطور يحَق✔️")
   end
   for k,v in pairs(result) do
     local member_id = v.peer_id
@@ -1084,7 +1084,7 @@ local function run(msg, matches)
 	local print_name = user_print_name(msg.from):gsub("‮", "")
 	local name_log = print_name:gsub("_", " ")
 	local data = load_data(_config.moderation.data)
-		if matches[1] == 'تفعيل المجموعه' and not matches[2] then
+		if matches[1] == 'تفعيل' and not matches[2] then
 			if not is_admin1(msg) and not is_support(support_id) then
 				return
 			end
@@ -1098,7 +1098,7 @@ local function run(msg, matches)
 			channel_set_admin(receiver, 'user#id'..msg.from.id, ok_cb, false)
 		end
 
-		if matches[1] == 'تعطيل المجموعه' and is_admin1(msg) and not matches[2] then
+		if matches[1] == 'تعطيل' and is_admin1(msg) and not matches[2] then
 			if not is_super_group(msg) then
 				return reply_msg(msg.id, '👈 ألمَجمَوَعــهَ بألــتأكيَدَ تَمَ تَعَطيَلهَأَ ✔️..', ok_cb, false)
 			end
@@ -1417,7 +1417,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_owner(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق ✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق✔️"
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -1461,7 +1461,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_owner(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق ✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق✔️"
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -1551,7 +1551,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_momod(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير  يحَق ✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير  يحَق✔️"
 			end
 			if matches[2] == 'الادمنيه' then
 				if next(data[tostring(msg.to.id)]['moderators']) == nil then
@@ -1982,8 +1982,8 @@ end
 
 return {
   patterns = {
-	"^(تفعيل المجموعه)$",
-	"^(تعطيل المجموعه)$",
+	"^(تفعيل)$",
+	"^(تعطيل)$",
 	"^([Mm]ove) (.*)$",
 	"^(معلومات المجموعه)$",
 	"^(الاداريين)$",

@@ -5,17 +5,17 @@
 ```sh
 
  Let's install the bot.
-افتـح ترمنـــأل وخلي   Open Terminal and vinegary
+افتـح ترمنـــأل وخلي   
 
 sudo apt-get update 
 🔸➖🔹➖🔸➖🔹➖
-ورهأَ خلي   And vinegary
+ورهأَ خلي  
 
 redis-server
 🔸➖🔹➖🔸➖🔹➖
-تركه مفتوح    Leave it open Terminal
+تركه مفتوح    
 🔸➖🔹➖🔸➖🔹➖
-وفتح ترمنال ثاني وخلي    Open Terminal and second vinegary
+وفتح ترمنال ثاني وخلي    
 
 sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes
 🔸➖🔹➖🔸➖🔹➖
@@ -23,19 +23,19 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 
 git clone https://github.com/moody2020/TH3_BOSS.git
 🔸➖🔹➖🔸➖🔹➖
-ورهأ خلي    And vinegary
+ورهأ خلي    
 
 cd TH3_BOSS
 🔸➖🔹➖🔸➖🔹➖
-ورهأَ خلي   And vinegary
+ورهأَ خلي 
 
 chmod +x launch.sh
 🔸➖🔹➖🔸➖🔹➖
-ورهأَ خلي   And vinegary
+ورهأَ خلي 
 
 ./launch.sh install
 🔸➖🔹➖🔸➖🔹➖
-ورهأَ خلي   And vinegary
+ورهأَ خلي  
 
 ./launch.sh 
 🔸➖🔹➖🔸➖🔹➖
@@ -48,19 +48,19 @@ Congratulations, you better bot
  One command
 To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
 
-لتنصيب البوـب بكوَدَ واحد فقط َ     To install one code
+لتنصيب البوـب بكوَدَ واحد فقط َ   
 
-فتح ترمنال وخلي   Open Terminal and vinegary
+فتح ترمنال وخلي   
 🔸➖🔹➖🔸➖🔹➖
 sudo apt-get update 
 🔸➖🔹➖🔸➖🔹➖
-ورهأَ خلي   And vinegary
+ورهأَ خلي  
 
 redis-server
 🔸➖🔹➖🔸➖🔹➖
-تركه مفتوح   Leave it open Terminal
+تركه مفتوح   
 
-وفتح ترمنال ثاني وخلي  Open Terminal and second vinegary
+وفتح ترمنال ثاني وخلي  
 ```sh
 
 sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes && git clone https://github.com/moody2020/TH3_BOSS.git && cd TH3_BOSS && chmod +x launch.sh && ./launch.sh install && ./launch.sh

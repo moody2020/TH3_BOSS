@@ -13,7 +13,7 @@ local user = msg.from.id
 local chat = msg.to.id
 
 if msg.to.type ~= 'chat' then
-return "ممنوع ⛔️نشر الروابط + الاعلانات + القروبات + القنوات"..'📝Name : '..msg.from.first_name..'\n'..'🔅يوزرك : @'..msg.from.username..'\n'
+return "ممنوع ⛔️نشر الروابط + الاعلانات  +الروابط +الصور + اعاد توجيه + القروبات + القنوات"..'📝Name : '..msg.from.first_name..'\n'..'🔅يوزرك : @'..msg.from.username..'\n'
 elseif user == tostring(our_id) then
 --[[A robot must protect its own existence as long as such protection does
 not conflict with the First or Second Laws.]]--

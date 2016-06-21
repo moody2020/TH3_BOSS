@@ -61,10 +61,10 @@ local S = [[  الاوامر 🔶
  🔸➖🔹➖🔸➖🔹➖
 ارسل كلمة لمعرفة مطور البوت    🔶 dev 🔶
  🔸➖🔹➖🔸➖🔹➖
-🔶DEV : @oOMOOMOo
-🔶DEV : @DEVIRAQ_BOT
-🔶Group Link : @ll98kll
-🔶Group Channel : @oOBOBOo
+👇🏿تأبعـونأَ كل جَديد عل قنأةَ السورس👇🏿
+                 [ @llDEV1ll ]
+👇🏿للأستفسار:- راسل المطور:- ☢⚜ 🔶 DEV:- @oOMOOMOo
+🔶 SUPPORT :- @ll60Kllbot
 ]]
 reply_msg(reply_id, S, ok_cb, false)
 end

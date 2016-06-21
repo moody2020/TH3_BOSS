@@ -40,12 +40,10 @@ local S = [[  HELPE FOR TH3 BOSS BOT
 
   🔶 isup cron : معه رابط السيرفر لتحسين سيرفر
 ✅➖➖✅➖➖✅➖➖✅
-🃏🔺للأستفسار:- راسل المطور :- ☢⚜ 
-✋🏿👇🏿
-🔶DEV : @oOMOOMOo
-🔶DEV : @DEVIRAQ_BOT
-🔶Group Link : @ll98kll
-🔶Group Channel : @oOBOBOo
+👇🏿تأبعـونأَ كل جَديد عل قنأةَ السورس👇🏿
+                 [ @llDEV1ll ]
+👇🏿للأستفسار:- راسل المطور:- ☢⚜ 🔶 DEV:- @oOMOOMOo
+🔶 SUPPORT :- @ll60Kllbot
 ]]
 reply_msg(reply_id, S, ok_cb, false)
 end

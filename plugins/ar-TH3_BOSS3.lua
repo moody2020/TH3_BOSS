@@ -21,11 +21,13 @@ return [[
                       
                       🔶DEV :🔶DEV : @oOMOOMOo
                       
-                      🔶DEV : @DEVIRAQ_BOT
+                      👇🏿تأبعـونأَ كل جَديد عل قنأةَ السورس👇🏿
                       
-                      🔶Group Link : @ll98kll
+                      [ @llDEV1ll ]
                       
-                      🔶Group Channel : @oOBOBOo
+                     👇🏿للأستفسار:- راسل المطور:- ☢⚜ 🔶 DEV:- @oOMOOMOo
+                     
+                     🔶 SUPPORT :- @ll60Kllboto
                       
 ]]
 end

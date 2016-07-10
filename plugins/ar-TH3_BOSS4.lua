@@ -2,7 +2,7 @@
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
 ▀▄ ▄▀                                       ▀▄ ▄▀ 
 ▀▄ ▄▀       BY MOHAMMED HISHAM              ▀▄ ▄▀ 
-▀▄ ▄▀ BY MOHAMMEDHISHAM (@oOMOOMOo)         ▀▄ ▄▀          
+▀▄ ▄▀ BY MOHAMMEDHISHAM (@TH3BOSS)          ▀▄ ▄▀          
 ▀▄ ▄▀ JUST WRITED BY MOHAMMED HISHAM        ▀▄ ▄▀   
 ▀▄ ▄▀     HELP DEV  : اوامر المطور          ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
@@ -41,7 +41,7 @@ local S = [[  BY MOHAMMED HISHAM
  🔸➖🔹➖🔸➖🔹➖
 👇🏿تأبعـونأَ كل جَديد عل قنأةَ السورس👇🏿
                  [ @llDEV1ll ]
-👇🏿للأستفسار:- راسل المطور:- ☢⚜ 🔶 DEV:- @oOMOOMOo
+👇🏿للأستفسار:- راسل المطور:- ☢⚜ 🔶 DEV:- @THEBOSS
 🔶 SUPPORT :- @ll60Kllbot
 ]]
 reply_msg(reply_id, S, ok_cb, false)

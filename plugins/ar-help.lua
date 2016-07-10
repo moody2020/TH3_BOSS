@@ -17,7 +17,7 @@ function run(msg, matches)
 ا🔸➖🔹➖🔸➖🔹➖🔸
 👇🏿تأبعـونأَ كل جَديد عل قنأةَ السورس👇🏿
                  [ @llDEV1ll ]
-👇🏿للأستفسار:- راسل المطور:- ☢⚜ 🔶 DEV:- @oOMOOMOo
+👇🏿للأستفسار:- راسل المطور:- ☢⚜ 🔶 DEV:- @TH3BOSS
 🔶 SUPPORT :- @ll60Kllbot
 ]]
 

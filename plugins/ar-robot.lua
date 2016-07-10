@@ -2,9 +2,9 @@
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
 ▀▄ ▄▀                                      ▀▄ ▄▀ 
 ▀▄ ▄▀    BY MOHAMMED HISHAM                ▀▄ ▄▀ 
-▀▄ ▄▀   BY MOHAMMEDHISHAM (@oOMOOMOo)      ▀▄ ▄▀ 
+▀▄ ▄▀   BY MOHAMMEDHISHAM (@TH3BOSS)      ▀▄ ▄▀ 
 ▀▄ ▄▀ JUST WRITED BY MOHAMMED HISHAM       ▀▄ ▄▀   
-▀▄ ▄▀   تشغيل او اطفاء البوت في دردشة مجدد           ▀▄ ▄▀ 
+▀▄ ▄▀   تشغيل او اطفاء البوت في دردشة مجدد ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
 local function is_channel_disabled( receiver )

@@ -2,7 +2,7 @@
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
 ▀▄ ▄▀                                       ▀▄ ▄▀ 
 ▀▄ ▄▀       BY MOHAMMED HISHAM              ▀▄ ▄▀ 
-▀▄ ▄▀ BY MOHAMMEDHISHAM (@oOMOOMOo)         ▀▄ ▄▀          
+▀▄ ▄▀ BY MOHAMMEDHISHAM (@TH3BOSS)          ▀▄ ▄▀          
 ▀▄ ▄▀ JUST WRITED BY MOHAMMED HISHAM        ▀▄ ▄▀   
 ▀▄ ▄▀          dev   : dev                  ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
@@ -17,15 +17,15 @@ return [[
 يعمل البوت على مجموعات سوبر تصل الى5k عضو 🔷
 
      ≪تم صنع البوت بواسطة المطور≫
-                      『  @oOMOOMOo 』
+                      『  @TH3BOSS 』
                       
-                      🔶DEV :🔶DEV : @oOMOOMOo
+                      🔶DEV :🔶DEV : @TH3BOSS
                       
                       👇🏿تأبعـونأَ كل جَديد عل قنأةَ السورس👇🏿
                       
                       [ @llDEV1ll ]
                       
-                     👇🏿للأستفسار:- راسل المطور:- ☢⚜ 🔶 DEV:- @oOMOOMOo
+                     👇🏿للأستفسار:- راسل المطور:- ☢⚜ 🔶 DEV:- @H3BOSS
                      
                      🔶 SUPPORT :- @ll60Kllboto
                       

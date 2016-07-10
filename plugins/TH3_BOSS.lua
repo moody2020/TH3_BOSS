@@ -6,13 +6,13 @@ if ( msg.text ) then
 
   if ( msg.to.type == "user" ) then
 
-     return "للتحدث مع المطور اضغط على المعرف التالي \n  @oOMOOMOo \n او اذا محظور اضغط هنا \n  @DEVIRAQ_BOT\n قنأة البوت \n  @oOBOBOo 🔶  "
+     return "للتحدث مع المطور اضغط على المعرف التالي \n  @TH3BOSS \n او اذا محظور اضغط هنا \n  @ll60KllBOT\n قنأة البوت \n  @llDEV1ll🔶  "
      
   end 
    
 end 
 
--- OMOOMOo 
+-- @TH3BOSS 
 
 end 
 
@@ -24,4 +24,4 @@ return {
 } 
 
 end 
--- By @SAJJADNOORI
+-- By @TH3BOSS

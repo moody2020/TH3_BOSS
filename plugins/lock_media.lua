@@ -51,8 +51,7 @@ end
 return { 
     patterns = { 
     "^(كتم الوسائط)$", 
-    "^(الغاء كتم الوسائط)$" 
-    }, 
+    "^( فتح الوسائط)$"     }, 
 run = run, 
     pre_process = pre_process 
 } 

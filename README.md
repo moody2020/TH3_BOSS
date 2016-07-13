@@ -1,6 +1,6 @@
+ كيفية تنصيب بوت الزعيم التحديث الاخير 2016
+ 
   TH3 BOSS BOT
-
-
 
 ```sh
 
@@ -44,6 +44,14 @@ chmod +x launch.sh
 يطلب رقم خلي رقم البوت 
 مبروك عليك افضل بوت عل تلي 
 
+عندنك استفسار او اي شي تدلل 
+@TH3BOSS
+واذا محظور تعال على بوت التواصل
+@ll60Kllbot
+
+Dev :   [@TH3BOSS](https://telegram.me/TH3BOSS)
+Dev_BOT :  [@ll60KllBOT](https://telegram.me/ll60KllBOT)
+Dev_Channel : [@llDEV1ll](https://telegram.me/llDEV1ll)
  Enter a phone number & confirmation code.
 Congratulations, you better bot
 ```
@@ -90,9 +98,8 @@ Open ./data/config.lua and add your ID to the "sudo_users" section in the follow
 ```
  مـبروَك أصبَحتـَ مـطورَ بوـتكَ لتوأصل معي 
 
-Dev :   [@oOMOOMOo](https://telegram.me/oOMOOMOo)
-Dev_BOT :  [@DEVIRAQ_BOT](https://telegram.me/DEVIRAQ_BOT)
-Dev_Channel :  [@oOBOBOo](https://telegram.me/oOBOBOo )
-
+Dev :   [@TH3BOSS](https://telegram.me/TH3BOSS)
+Dev_BOT :  [@ll60KllBOT](https://telegram.me/ll60KllBOT)
+Dev_Channel : [@llDEV1ll](https://telegram.me/llDEV1ll)
 عندكَ فكره تطوير السورس او البوت تفظل هنأَ🏿️
 You have an idea to develop Alsoors or bot prefer 🏿️

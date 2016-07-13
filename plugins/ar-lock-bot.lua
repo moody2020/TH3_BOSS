@@ -82,7 +82,7 @@ return {
   },
   patterns = {
     '^(قفل البوتات)$',
-    '^(قفل البوتات)$',
+    '^(فتح البوتات)$',
     '^!!tgservice (chat_add_user)$',
     '^!!tgservice (chat_add_user_link)$'
   },

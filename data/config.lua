@@ -57,7 +57,7 @@ do local _ = {
      "ar-TH3_BOSS6",
     "ar-TH3_BOSS4",
     "newgroup",
-    "Reply",
+    "replay",
     "ar-help",
     "stats",
     "lock_media",

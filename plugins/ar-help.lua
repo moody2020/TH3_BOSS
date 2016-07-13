@@ -14,7 +14,6 @@ function run(msg, matches)
 ♣️Dev💀: @TH3BOSS
  ♣️Dev bot💀: @ll60Kllbot
  ♣️DevChannel 💀: @llDEV1ll
-📅  sunday, july, 11, 2016
 ]] 
 
 end 

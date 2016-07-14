@@ -27,9 +27,10 @@ local S = [[
 🛡 "قفل / فتح" العربيه :↭↜ ( التحكم باللغه داخل المجموعه)
 🛡 "قفل / فتح" جهات الاتصال :↭↜ (التحكم بالجهات في المجموعه)
 🔸➖🔹➖🔸➖🔹➖
-♣️Dev💀: @TH3BOSS
- ♣️Dev bot💀: @ll60Kllbot 
-♣️DevChannel 💀: @llDEV1ll ]]
+💯-Đєⱴ💀: @TH3BOSS
+💯-Đєⱴ ฿๏ͳ💀: @ll60Kllbot
+💯-Đєⱴ Ϲḫ₳ͷͷєℓ💀: @llDEV1ll
+]]
 reply_msg(reply_id, S, ok_cb, false)
 end
 

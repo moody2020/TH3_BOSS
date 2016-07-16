@@ -116,7 +116,7 @@ local user_num = "🔶 عدد الاعضاء: "..result.participants_count.."\n"
 local kicked_num = "🔶 الاعضاء الاكثر تفاعل: "..result.kicked_count.."\n"
 local channel_id = "🔶 ايدي المجموعه: "..result.peer_id.."\n"
 if result.username then
-	channel_username = "🔶 معرف المجموعه : @"..result.username
+	channel_username = "❣ معرف المجموعه : @"..result.username
 else
 	channel_username = ""
 end
@@ -216,11 +216,11 @@ local function lock_group_spam(msg, data, target)
   end
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
   if group_spam_lock == 'yes' then
-    return '😠 مضاد السبام بالفعل مفتوح 💊🔓'
+    return '😠 مضاد السبام بالفعل مقفول 💊 ✔️'
   else
     data[tostring(target)]['settings']['lock_spam'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'تم ✔️ فتح مضاد السبام 💊 🔓'
+    return 'تم ✔️ قفل مضاد السبام 💊 🔐'
   end
 end
 
@@ -230,11 +230,11 @@ local function unlock_group_spam(msg, data, target)
   end
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
   if group_spam_lock == 'no' then
-    return '😠 مضاد السبام بالفعيل مقفول 💊 ✔️'
+    return '😠 مضاد السبام بالفعل مفتوح 💊🔓'
   else
     data[tostring(target)]['settings']['lock_spam'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'تم ✔️ قفل مضاد السبام 💊 🔐'
+    return 'تم ✔️ فتح مضاد السبام 💊 🔓'
   end
 end
 
@@ -528,7 +528,7 @@ function show_supergroup_settingsmod(msg, target)
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "⚙ اعدادات المجموعه 👥\n🔶  قفل الروابط : "..settings.lock_link.."\n🔶  قفل التكرار: "..settings.flood.."\n🔶  عدد التكرار  : "..NUM_MSG_MAX.."\n🔶  قفل الكلايش الطويله: "..settings.lock_spam.."\n🔶  قفل اللغه العربيه: "..settings.lock_arabic.."\n🔶  قفل الاضافه: "..settings.lock_member.."\n🔶  قفل المغادره: "..settings.lock_rtl.."\n🔶  قفل الملصقات: "..settings.lock_sticker.."\n🔶  المراقبه: "..settings.public.."\n🔶  قفل جميع الاعدادات: "..settings.strict
+  local text = "🔶 اعدادات المجموعه 👥\n🔶 قفل الروابط : "..settings.lock_link.."\n🔶 قفل التكرار: "..settings.flood.."\n🔶 عدد التكرار  : "..NUM_MSG_MAX.."\n🔶 قفل الكلايش الطويله: "..settings.lock_spam.."\n🔶 قفل اللغه العربيه: "..settings.lock_arabic.."\n🔶 قفل الاضافه: "..settings.lock_member.."\n🔶 قفل المغادره: "..settings.lock_rtl.."\n🔶 قفل الملصقات: "..settings.lock_sticker.."\n🔶 المراقبه: "..settings.public.."\n🔶 قفل جميع الاعدادات: "..settings.strict
   return text
 end
 
@@ -1098,8 +1098,7 @@ local function run(msg, matches)
 			channel_set_admin(receiver, 'user#id'..msg.from.id, ok_cb, false)
 		end
 
-		if matches[1] == 'تعطيل' and is_admin1(msg) and not matches[2] then
-			if not is_super_group(msg) then
+		if matches[1] == 'تعطيل' and is_admin1(msg) and not matches[2] then			if not is_super_group(msg) then
 				return reply_msg(msg.id, '👈 ألمَجمَوَعــهَ بألــتأكيَدَ تَمَ تَعَطيَلهَأَ ✔️..', ok_cb, false)
 			end
 			print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") removed")
@@ -1235,7 +1234,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'مغادره' then
+		if matches[1] == 'دعبلني' then
 			if msg.to.type == 'channel' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] left via kickme")
 				channel_kick("channel#id"..msg.to.id, "user#id"..msg.from.id, ok_cb, false)
@@ -1279,7 +1278,7 @@ local function run(msg, matches)
 			end
 			local group_link = data[tostring(msg.to.id)]['settings']['set_link']
 			if not group_link then
-				return "❓يرجئ ارسال [/تغير الرابط] لانشاء رابط المجموعه✔️"
+				return "❓يرجئ ارسال [/تغير الرابط] لانشاء رابط المجموعه👍🏻✔️"
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
 			return "⁉️ رابط المجموعه 👥:\n"..group_link
@@ -1417,7 +1416,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_owner(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق لهَ✔️"
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -1461,7 +1460,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_owner(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير او الاداري يحَق لهَ✔️"
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -1551,7 +1550,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_momod(msg) then
-				return "👌🏻لتلعَب بكَيفك فقَطَ المدير  يحَق✔️"
+				return "👌🏻لتلعَب بكَيفك فقَطَ المدير  يحَق لهَ✔️"
 			end
 			if matches[2] == 'الادمنيه' then
 				if next(data[tostring(msg.to.id)]['moderators']) == nil then
@@ -1719,9 +1718,9 @@ local function run(msg, matches)
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." has been muted"
+					return msg_type.." تَِم ✔️ قَـفِلَ ألـصوتيــات 🔐✋"
 				else
-					return "SuperGroup mute "..msg_type.." is already on"
+					return "SuperGroup mute "..msg_type.." الصوتيات 🌚 بالفعل مقفولة🔐😠"
 				end
 			end
 			if matches[2] == 'الصور' then
@@ -1729,9 +1728,9 @@ local function run(msg, matches)
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." has been muted"
+					return msg_type.." تَِم ✔️ قَـفِلَ ألـصور 🔐"
 				else
-					return "SuperGroup mute "..msg_type.." is already on"
+					return "SuperGroup mute "..msg_type.." الصور 🌚 بالفعل مقفولة🔐😠"
 				end
 			end
 			if matches[2] == 'الفيديو' then
@@ -1739,9 +1738,9 @@ local function run(msg, matches)
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." has been muted"
+					return msg_type.." تَِم ✔️ قَـفِلَ الـفـيــديــو 🔐"
 				else
-					return "SuperGroup mute "..msg_type.." is already on"
+					return "SuperGroup mute "..msg_type.." الفيديوهات 🌚 بالفعل مقفولة🔐😠"
 				end
 			end
 			if matches[2] == 'الصور المتحركه' then
@@ -1749,9 +1748,9 @@ local function run(msg, matches)
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." have been muted"
+					return msg_type.." تَِم ✔️ قَـفِلَ الـصــور المـتـحركـة 🔐"
 				else
-					return "SuperGroup mute "..msg_type.." is already on"
+					return "SuperGroup mute "..msg_type.." الصور المتحركة 🌚 بالفعل مقفولة🔐😠"
 				end
 			end
 			if matches[2] == 'الفايلات' then
@@ -1759,9 +1758,9 @@ local function run(msg, matches)
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." have been muted"
+					return msg_type.." تَِم ✔️ قَـفِلَ الـفــايـلات 🔐"
 				else
-					return "SuperGroup mute "..msg_type.." is already on"
+					return "SuperGroup mute "..msg_type.." الالفايلات 🌚 بالفعل مقفولة🔐😠"
 				end
 			end
 			if matches[2] == 'الدردشه' then
@@ -1769,9 +1768,9 @@ local function run(msg, matches)
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." has been muted"
+					return msg_type.." تَِم ✔️ قَـفِلَ الـدردشــة 🔐"
 				else
-					return "Mute "..msg_type.." is already on"
+					return "Mute "..msg_type.." الدردشة 🌚 بالفعل مقفولة🔐😠"
 				end
 			end
 			if matches[2] == 'المجموعه' then
@@ -1792,9 +1791,9 @@ local function run(msg, matches)
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
 					unmute(chat_id, msg_type)
-					return msg_type.." has been unmuted"
+					return msg_type.." تَمِ ✔️ فـتَحِ الـصـوتـيــات 🔓👍"
 				else
-					return "Mute "..msg_type.." is already off"
+					return "Mute "..msg_type.." الصوتيات 💊 بالفعل مفتوحة🔓😠"
 				end
 			end
 			if matches[2] == 'الصور' then
@@ -1802,9 +1801,9 @@ local function run(msg, matches)
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
 					unmute(chat_id, msg_type)
-					return msg_type.." has been unmuted"
+					return msg_type.." تَمِ ✔️ فـتَحِ الـصـور 🔓👍"
 				else
-					return "Mute "..msg_type.." is already off"
+					return "Mute "..msg_type.." الصور 💊 بالفعل مفتوحة🔓😠"
 				end
 			end
 			if matches[2] == 'الفيديو' then
@@ -1812,9 +1811,9 @@ local function run(msg, matches)
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
 					unmute(chat_id, msg_type)
-					return msg_type.." has been unmuted"
+					return msg_type.." تَمِ ✔️ فـتَحِ الـفـيـديـو 🔓👍"
 				else
-					return "Mute "..msg_type.." is already off"
+					return "Mute "..msg_type.." الفيديوهات 💊 بالفعل مفتوحة🔓😠"
 				end
 			end
 			if matches[2] == 'الصور المتحركه' then
@@ -1822,9 +1821,9 @@ local function run(msg, matches)
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
 					unmute(chat_id, msg_type)
-					return msg_type.." have been unmuted"
+					return msg_type.." تَمِ ✔️ فـتَحِ الـصـور المـتـحـركـة🔓👍"
 				else
-					return "Mute "..msg_type.." is already off"
+					return "Mute "..msg_type.." الصور المتحركة 💊 بالفعل مفتوحة🔓😠"
 				end
 			end
 			if matches[2] == 'الفايلات' then
@@ -1832,9 +1831,9 @@ local function run(msg, matches)
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
 					unmute(chat_id, msg_type)
-					return msg_type.." have been unmuted"
+					return msg_type.." تَمِ ✔️ فـتَحِ الـفـايــلات🔓👍"
 				else
-					return "Mute "..msg_type.." is already off"
+					return "Mute "..msg_type.." الفايلات 💊 بالفعل مفتوحة🔓😠"
 				end
 			end
 			if matches[2] == 'الدردشه' then
@@ -1842,9 +1841,9 @@ local function run(msg, matches)
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute message")
 					unmute(chat_id, msg_type)
-					return msg_type.." has been unmuted"
+					return msg_type.." تَمِ ✔️ فـتَحِ الـدردشــة🔓👍"
 				else
-					return "Mute text is already off"
+					return "الدردشة 💊 بالفعل مفتوحة🔓😠"
 				end
 			end
 			if matches[2] == 'المجموعه' then
@@ -2048,4 +2047,4 @@ return {
   pre_process = pre_process
 }
 --End supergrpup.lua
---By @oOMOOMOo
+--By @TH3BOSS

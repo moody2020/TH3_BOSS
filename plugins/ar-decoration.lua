@@ -7,12 +7,12 @@
 ▀▄ ▄▀     decoration  : زخرفه نصوص         ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
-local function run(msg, matches)
+local function th3boss(msg, matches)
 local reply_id = msg['id']
 	if not is_momod(msg) then
-	local SAJJADNOORI = '❌ لَتلعَب بكَيفك 😜 المشرفيَنَ فقطَ  ✔️ 👍'
+	local th3boss= '❌ لَتلعَب بكَيفك 😜 المشرفيَنَ فقطَ  ✔️ 👍'
 	return
-	reply_msg(reply_id, SAJJADNOORI, ok_cb, false)
+	reply_msg(reply_id, th3boss, ok_cb, false)
 	end
 	if #matches < 2 then
 		return "بعد هذا الأمر، من خلال تحديد كلمة المسافة أو العبارة التي تريد إدخال الكتابة الجميلة"
@@ -90,13 +90,13 @@ local reply_id = msg['id']
 
 		table.insert(result, text)
 	end
-	local result_text = "❣ زخرفة : "..matches[2].."\n❣ تصميم "..tostring(#fonts).." خط :\n______________________________\n"
+	local result_text = "💯 زخرفة : "..matches[2].."\n💯 تصميم "..tostring(#fonts).." خط :\n🃏〰〰〰〰〰〰〰〰〰🃏\n"
 	a=0
 	for v=1,#result do
 		a=a+1
 		result_text = result_text..a.."- "..result[a].."\n\n"
 	end
-	return result_text.."______________________________\n❣ #Dev @SAJJADNOORI\n❣ #Bot_channel : @S94IQ"
+	return result_text.."🃏〰〰〰〰〰〰〰〰〰🃏\n💯-Đєⱴ💀: @TH3BOSS\n💯-Đєⱴ ฿๏ͳ💀: @ll60Kllbot\n💯-Đєⱴ Ϲḫ₳ͷͷєℓ💀: @llDEV1ll"
 end
 
 return {
@@ -107,5 +107,5 @@ return {
 		"^(زخرفه) (.*)",
 		"^(زخرفه)$",
 		},
-	run = run
+	run = th3boss
 }

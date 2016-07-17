@@ -1,6 +1,6 @@
  كيفية تنصيب بوت الزعيم التحديث الاخير 2016
  
-  TH3 BOSS BOT
+  TH3 BOSS BOT (https://telegram.me/TH3BOSS)
 
 ```sh
 

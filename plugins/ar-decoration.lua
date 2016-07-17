@@ -1,12 +1,13 @@
 --[[ 
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
 ▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY SAJJAD NOORI                   ▀▄ ▄▀ 
-▀▄ ▄▀     BY SAJAD NOORI (@SAJJADNOORI)    ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY SAJJAD NOORI          ▀▄ ▄▀   
-▀▄ ▄▀     decoration  : زخرفه نصوص         ▀▄ ▄▀ 
+▀▄ ▄▀    BY MOHAMMED HISHAM                ▀▄ ▄▀ 
+▀▄ ▄▀     BY MOHAMMEDHISHAM (@TH3BOSS)     ▀▄ ▄▀ 
+▀▄ ▄▀ JUST WRITED BY MOHAMMED HISHAM       ▀▄ ▄▀   
+▀▄ ▄▀      decoration      :  زخرفه        ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
+
 local function th3boss(msg, matches)
 local reply_id = msg['id']
 	if not is_momod(msg) then

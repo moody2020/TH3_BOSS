@@ -111,10 +111,10 @@ end
 --Get and output info about supergroup
 local function callback_info(cb_extra, success, result)
 local title ="♨️ معلومات عن مجموعة⁉️: ["..result.title.."]\n\n"
-local admin_num = "🔶 عدد الادمنيه: "..result.admins_count.."\n"
-local user_num = "🔶 عدد الاعضاء: "..result.participants_count.."\n"
-local kicked_num = "🔶 الاعضاء الاكثر تفاعل: "..result.kicked_count.."\n"
-local channel_id = "🔶 ايدي المجموعه: "..result.peer_id.."\n"
+local admin_num = "🔹 عدد الادمنيه: "..result.admins_count.."\n"
+local user_num = "🔹 عدد الاعضاء: "..result.participants_count.."\n"
+local kicked_num = "🔹 الاعضاء الاكثر تفاعل: "..result.kicked_count.."\n"
+local channel_id = "🔹 ايدي المجموعه: "..result.peer_id.."\n"
 if result.username then
 	channel_username = "❣ معرف المجموعه : @"..result.username
 else
@@ -528,7 +528,7 @@ function show_supergroup_settingsmod(msg, target)
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "🔶 اعدادات المجموعه 👥\n🔶 قفل الروابط : "..settings.lock_link.."\n🔶 قفل التكرار: "..settings.flood.."\n🔶 عدد التكرار  : "..NUM_MSG_MAX.."\n🔶 قفل الكلايش الطويله: "..settings.lock_spam.."\n🔶 قفل اللغه العربيه: "..settings.lock_arabic.."\n🔶 قفل الاضافه: "..settings.lock_member.."\n🔶 قفل المغادره: "..settings.lock_rtl.."\n🔶 قفل الملصقات: "..settings.lock_sticker.."\n🔶 المراقبه: "..settings.public.."\n🔶 قفل جميع الاعدادات: "..settings.strict
+  local text = "🔹 اعدادات المجموعه 🔹\n🔹 قفل الروابط : "..settings.lock_link.."\n🔹 قفل التكرار: "..settings.flood.."\n🔹 عدد التكرار  : "..NUM_MSG_MAX.."\n🔹 قفل الكلايش الطويله: "..settings.lock_spam.."\n🔹 قفل اللغه العربيه: "..settings.lock_arabic.."\n🔹 قفل الاضافه: "..settings.lock_member.."\n🔹 قفل المغادره: "..settings.lock_rtl.."\n🔹 قفل الملصقات: "..settings.lock_sticker.."\n🔹 المراقبه: "..settings.public.."\n🔹 قفل جميع الاعدادات: "..settings.strict
   return text
 end
 
@@ -1230,7 +1230,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return "🔶 ايدي مجموعة "..string.gsub(msg.to.print_name, "_", " ")..": "..msg.to.id
+				return "🔹 ايدي مجموعة "..string.gsub(msg.to.print_name, "_", " ")..": "..msg.to.id
 			end
 		end
 

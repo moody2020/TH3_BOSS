@@ -56,9 +56,11 @@ chmod +x TH3BOSS.sh
 طبعا هنا بالتنصيب الجديد اكو طريقتين لتشغيل البوت
 1_ وهي تشغيل البوت نفس الطريقة القديمة مجرد تطي رن للبوت
 2_ وهي الطريقة الجدية والافضل من الرن وهي السكرابت التشغيل عن طريق فتح ترمنال وتكتب الاوامر الجوة
-1_killall tmux
-2_cd TH3_BOSS
-3_bash TH3BOSS.sh -t
+
+1_killall -w bash
+2_killall tmux
+3_cd TH3_BOSS
+4_bash TH3BOSS.sh -t
 
 Dev :   [@TH3BOSS](https://telegram.me/TH3BOSS)
 Dev_BOT :  [@ll60KllBOT](https://telegram.me/ll60KllBOT)

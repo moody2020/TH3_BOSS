@@ -34,10 +34,6 @@ cd TH3_BOSS
 chmod +x launch.sh
 🔸➖🔹➖🔸➖🔹➖
 ورهأَ خلي 
-🔸➖🔹➖🔸➖🔹➖
-chmod +x TH3BOSS.sh
-🔸➖🔹➖🔸➖🔹➖
-ورهأَ خلي 
 
 ./launch.sh install
 🔸➖🔹➖🔸➖🔹➖

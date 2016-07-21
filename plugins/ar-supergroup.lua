@@ -25,16 +25,16 @@ local function check_member_super(cb_extra, success, result)
         set_owner = member_id ,
         settings = {
           set_name = string.gsub(msg.to.title, '_', ' '),
-		  lock_arabic = 'no',
-		  lock_link = "no",
+		  lock_arabic = 'yes',
+		  lock_link = "yes",
           flood = 'yes',
 		  lock_spam = 'yes',
-		  lock_sticker = 'no',
-		  member = 'no',
-		  public = 'no',
-		  lock_rtl = 'no',
-		  lock_contacts = 'no',
-		  strict = 'no'
+		  lock_sticker = 'yes',
+		  member = 'yes',
+		  public = 'yse',
+		  lock_rtl = 'yes',
+		  lock_contacts = 'yes',
+		  strict = 'yes'
         }
       }
       save_data(_config.moderation.data, data)

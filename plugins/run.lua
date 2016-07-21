@@ -1,4 +1,12 @@
--- Made By @Omar_Real
+--[[ 
+▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
+▀▄ ▄▀                                       ▀▄ ▄▀ 
+▀▄ ▄▀       BY MOHAMMED HISHAM              ▀▄ ▄▀ 
+▀▄ ▄▀ BY MOHAMMEDHISHAM (@TH3BOSS)          ▀▄ ▄▀          
+▀▄ ▄▀ JUST WRITED BY MOHAMMED HISHAM        ▀▄ ▄▀   
+▀▄ ▄▀                                       ▀▄ ▄▀ 
+▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
+--]]
 
 do
 function run(msg, matches)
@@ -12,9 +20,9 @@ function run(msg, matches)
 end
 return {
   patterns = {
-    "^[/!](run)",
-    "^[/!](update)",
-    "^[/!](redis)"
+    "^(run)",
+    "^(update)",
+    "^(redis)"
   },
   run = run
 }

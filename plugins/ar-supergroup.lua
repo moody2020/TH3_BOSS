@@ -25,7 +25,7 @@ local function check_member_super(cb_extra, success, result)
         set_owner = member_id ,
         settings = {
           set_name = string.gsub(msg.to.title, '_', ' '),
-		  lock_arabic = 'yes',
+		  lock_arabic = 'no',
 		  lock_link = "yes",
           flood = 'yes',
 		  lock_spam = 'yes',

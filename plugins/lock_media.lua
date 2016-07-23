@@ -17,7 +17,7 @@ local chat = msg.to.id
     if redis:get(moody) and msg.media and not is_momod(msg) then 
 
             delete_msg(msg.id, ok_cb, false) 
-local test = "عزيزي~["..msg.from.first_name.."]".."\n".."يمنع نشر صور فيديوهات صوتيات وكافة الميديا هنا ان تكرر الامر سوف تجبرني على طردك🙂☝️".."\n".."#username: @"..(msg.from.username or " ") 
+local test = "عزيزي~["..msg.from.first_name.."]".."\n".."يمنع نشر صور فيديوهات صوتيات وكافة الميديا هنا ان تكرر الامر سوف تجبرني على طردك🙂☝️".."\n".." 🔹 username : @"..(msg.from.username or " ") 
 reply_msg(mohammed, test, ok_cb, true) 
 
 end 

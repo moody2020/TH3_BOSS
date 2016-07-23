@@ -36,12 +36,11 @@ reply_msg(mohammed, boss, ok_cb, true)
 elseif matches[1] == 'قفل الوسائط' and not is_momod(msg) then 
 local moody = 'للمشرفين فقط🔴' 
 reply_msg(mohammed, moody, ok_cb, true) 
-
-elseif matches[1] == 'فتح الوسائط' and not is_momod(msg) then 
-      local th3boss = 'mate:'..msg.to.id 
-      redis:del(th3boss) 
+  elseif is_momod(msg) and matches[1] == 'فتح الوسائط' then
+      local th3boss= 'mate:'..msg.to.id
+      redis:del(th3boss)
     local boss = ' تم الغاء كتم الوسائط🔔' 
-reply_msg(mohammed, don, ok_cb, true) 
+reply_msg(mohammed, boss, ok_cb, true) 
 elseif matches[1] == 'فتح الوسائط' and not is_momod(msg) then 
 local moody= 'للمشرفين فقط🔴' 
 reply_msg(mohammed, moody, ok_cb, true) 
@@ -51,7 +50,7 @@ end
 return { 
     patterns = { 
     "^(قفل الوسائط)$", 
-    "^(فتح الوسائط)$"    
+    "^(فتح الوسائط)$", 
   },
 run = run, 
     pre_process = pre_process 

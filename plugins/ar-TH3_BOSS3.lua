@@ -27,7 +27,7 @@ return [[
                       
                      👇🏿للأستفسار:- راسل المطور:- ☢⚜ 🔹 DEV:- @TH3BOSS
                      
-                     🔹 SUPPORT :- @ll60Kllboto
+                     🔹 SUPPORT :- @ll60Kllbot
                       
 ]]
 end

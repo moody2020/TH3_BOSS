@@ -62,7 +62,7 @@ echo -e "\033[38;5;208m             IRAQ                                 \033[0;
 echo -e "\033[38;5;208m             DEV : ♛♔↝ الـےز؏ّـ«ْஞ»ـِيم ||  مٰـحٰـمـٰد هٰـشٰامٰ ³¹³ ll90Kll  ↜♔♛                      \033[0;00m"
 echo -e "\033[38;5;208m             DEV :  @TH3BOSS                      \033[0;00m"
 echo -e "\033[38;5;208m             DEV Channel :  @llDEV1ll    \033[0;00m"
-echo -e "\033[38;5;208m             BY мσнαммє∂ нιѕнαм ll60Kllbot                                 \033[0;00m"
+echo -e "\033[38;5;208m             DEV Bot : @ll60Kllbot                                 \033[0;00m"
 
 sleep 1.5
 echo -e "$bld$f4 CHECKING PROCESSES...$rst"
@@ -220,7 +220,7 @@ echo -e "\033[38;5;208m         IRAQ                                      \033[0
 echo -e "\033[38;5;208m       DEV : ♛♔↝ الـےز؏ّـ«ْஞ»ـِيم ||  مٰـحٰـمـٰد هٰـشٰامٰ ³¹³ ll90Kll  ↜♔♛                            \033[0;00m"
 echo -e "\033[38;5;208m       DEV :  @TH3BOSS                         \033[0;00m"
 echo -e "\033[38;5;208m       DEV Channel :  @llDEV1ll    \033[0;00m"
-echo -e "\033[38;5;208m       BY мσнαммє∂ нιѕнαм ll60Kllbot                                        \033[0;00m"
+echo -e "\033[38;5;208m       DEV Bot : @ll60Kllbot                                       \033[0;00m"
 
 # Starting preliminar setup
 sleep 1.5

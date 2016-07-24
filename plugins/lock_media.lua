@@ -25,7 +25,7 @@ end
         return msg 
     end 
 
-local function run(msg, matches) 
+local function MOHAMMED(msg, matches) 
 local mohammed = msg['id'] 
 
     if matches[1] == 'قفل الوسائط'  and is_momod(msg) then 
@@ -52,7 +52,7 @@ return {
     "^(قفل الوسائط)$", 
     "^(فتح الوسائط)$", 
   },
-run = run, 
+run = MOHAMMED, 
     pre_process = pre_process 
 } 
 

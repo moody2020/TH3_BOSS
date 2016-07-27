@@ -9,7 +9,7 @@
 --]]
 do
 
-function run(msg, matches)
+function mohammed(msg, matches)
 local reply_id = msg['id']
 local S = [[ 
 📍💭 اوامر فتح وقفل الميديا 🀄️
@@ -42,6 +42,6 @@ usage = "Help list",
 patterns = {
 "^(م4)$",
 },
-run = run 
+run = mohammed 
 }
 end

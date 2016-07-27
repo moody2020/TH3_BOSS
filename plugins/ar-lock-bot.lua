@@ -40,7 +40,7 @@ local user = 'user#id'..userId
   end, {chat=chat, user=user})
 end
 
-local function run (msg, matches)
+local function mohammed (msg, matches)
 
   if matches[1] ~= 'chat_add_user' and matches[1] ~= 'chat_add_user_link' then
     if msg.to.type ~= 'chat' and msg.to.type ~= 'channel' then
@@ -51,11 +51,11 @@ local function run (msg, matches)
   local chatId = msg.to.id
   if matches[1] == 'قفل البوتات' then
     enableAntiBot(chatId)
-  return 'تـمِ  ✔️ قـفِلَ أضــأفهَ ألــبوَتَِــأت 🔐✋🏻'
+  return 'تم ☑️ قفل 🔒 اضافه البوتات ✋😽'
   end
   if matches[1] == 'فتح البوتات' then
     disableAntiBot(chatId)
-  return 'تـمِ  ✔️ فَتـحَ أضــأفهَ ألــبوَتَِــأت 🔓👍'
+  return 'تم ☑️ فتح 🔓 اضافه البوتات ✋😽'
   end
   if matches[1] == 'chat_add_user' or matches[1] == 'chat_add_user_link' then
     local user = msg.action.user or msg.from
@@ -86,5 +86,5 @@ return {
     '^!!tgservice (chat_add_user)$',
     '^!!tgservice (chat_add_user_link)$'
   },
-  run = run
+  run = mohammed
 }

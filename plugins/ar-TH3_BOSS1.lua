@@ -9,7 +9,7 @@
 --]]
 do
 
-local function run(msg, matches)
+local function mohammed(msg, matches)
 local reply_id = msg['id']
 if is_momod(msg) and matches[1]== 'م1' then
 local S = [[  📍💭 اوامر حماية المجموعه 🀄️
@@ -51,6 +51,6 @@ usage = "Help list",
 patterns = {
 "^(م1)$",
 },
-run = run 
+run = mohammed 
 }
 end

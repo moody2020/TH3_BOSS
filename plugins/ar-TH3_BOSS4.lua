@@ -9,7 +9,7 @@
 --]]
 do
 
-local function run(msg, matches)
+local function mohammed(msg, matches)
 local reply_id = msg['id']
 if is_sudo(msg) and matches[1]== "م المطور" then
 local S = [[  💯 اوامر المطورين 💯
@@ -63,6 +63,6 @@ usage = "Help list",
 patterns = {
 "^(م المطور)$",
 },
-run = run 
+run = mohammed 
 }
 end

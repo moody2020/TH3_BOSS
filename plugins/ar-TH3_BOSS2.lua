@@ -9,7 +9,7 @@
 --]]
 do
 
-function run(msg, matches)
+function mohammed(msg, matches)
 local reply_id = msg['id']
 local S = [[ 
 📍💭 اوامر تخص المجموعه 🀄️
@@ -20,7 +20,6 @@ local S = [[
 🎈 ضع وصف : ↭↜ ( لوضع وصف للمجموعه )
 🎈 ضع اسم : ↭↜ ( لوضع اسم جديد للمجموعه )
 ـ🔸➖🔹➖🔸➖🔹➖🔸ـ
-
 💥 ضع معرف : ↭↜ ( لوضع معرف للمجموعه )
 💥 ضع رابط : ↭↜ ( لوضع رابط للمجموعه )
 💥 الرابط : ↭↜ ( لعرض رابط المجموعه )
@@ -53,6 +52,6 @@ usage = "Help list",
 patterns = {
 "^(م2)$",
 },
-run = run 
+run = mohammed 
 }
 end

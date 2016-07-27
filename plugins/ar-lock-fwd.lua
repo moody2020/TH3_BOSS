@@ -24,7 +24,7 @@ local function pre_process(msg)
   
 
 
-local function run(msg, matches)
+local function mohammed(msg, matches)
     chat_id =  msg.to.id
     
     if is_momod(msg) and matches[1] == 'قفل اعاده توجيه' then
@@ -32,11 +32,11 @@ local function run(msg, matches)
             
                     local hash = 'mate:'..msg.to.id
                     redis:set(hash, true)
-                    return "تَِم ✔️ قَـفِلَ أعأدِه تــوجيـهَ 🔐✋🏻"
+                    return "تم ☑️ قفل 🔒 اعاده توجيه ✋😽"
   elseif is_momod(msg) and matches[1] == 'فتح اعاده توجيه' then
       local hash = 'mate:'..msg.to.id
       redis:del(hash)
-      return "تَمِ ✔️ فـتَحِ آعأدهِ توجيـهَ 🔓👍"
+      return "تم ☑️ فتح 🔓 اعاده توجيه ✋😽"
 end
 
 end
@@ -46,7 +46,7 @@ return {
         '^(قفل اعاده توجيه)$',
         '^(فتح اعاده توجيه)$'
     },
-    run = run,
+    run = mohammed,
     pre_process = pre_process
 }
 end

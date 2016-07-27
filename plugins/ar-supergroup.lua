@@ -670,9 +670,9 @@ function get_message_callback(extra, success, result)
         local channel_id = "channel#id"..result.to.peer_id
         channel_set_admin(channel_id, "user#id"..user_id, ok_cb, false)
         if result.from.username then
-            text = "@"..result.from.username.."تم ☑️ رفعك 😉 في الاداره 👍 جرارة كلبي 😻💔"
+            text = "@"..result.from.username.."تم ☑️ رفعك 😉 في الاداره 👍  شدلك محرك جـارجـر 😻💔"
         else
-            text = "[ "..user_id.." ]تم ☑️ رفعك 😉 في الاداره 👍 جرارة كلبي 😻💔"
+            text = "[ "..user_id.." ]تم ☑️ رفعك 😉 في الاداره 👍 شدلك محرك جـارجـر  😻💔"
         end
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] set: ["..user_id.."] as admin by reply")
         send_large_msg(channel_id, text)
@@ -784,15 +784,15 @@ local function cb_user_info(extra, success, result)
             send_large_msg(receiver, text)]]
     if get_cmd == "تنزيل اداري" then
         if is_admin2(result.peer_id) then
-            return send_large_msg(receiver, "لآ تمسَلت بكَيفكَ لآَ يمكَنَكَ تنزَيل أدأريَ 😂")
+            return send_large_msg(receiver, "لا تلعب بكيفك لا يمكنك تنزيل اداري 😹")
         end
         local user_id = "user#id"..result.peer_id
         channel_demote(receiver, user_id, ok_cb, false)
         if result.username then
-            text = "@"..result.username.." خطـيهَ تمَ تنزيله 😢 منْ ألآَدأرهَ لتبجي جرَأَرهَ كلـبيَ 💔"
+            text = "@"..result.username.." خطيه تم تنزيله 😿 من الادارة لتبجي كبد عمري  💔"
             send_large_msg(receiver, text)
         else
-            text = "[ "..result.peer_id.." ] خطـيهَ تمَ تنزيله 😢 منْ ألآَدأرهَ لتبجي جرَأَرهَ كلـبيَ 💔"
+            text = "[ "..result.peer_id.." ]  خطيه تم تنزيله 😿 من الادارة لتبجي كبد عمري  💔 "
             send_large_msg(receiver, text)
         end
     elseif get_cmd == "رفع ادمن" then
@@ -894,14 +894,14 @@ local function callbackres(extra, success, result)
         local user_id = "user#id"..result.peer_id
         local channel_id = extra.channel
         if is_admin2(result.peer_id) then
-            return send_large_msg(channel_id, "لآ تمسَلت بكَيفكَ لآَ يمكَنَكَ تنزَيل أدأريَ 😂")
+            return send_large_msg(channel_id, "لا تلعب بكيفك لا يمكنك تنزيل اداري 😹")
         end
         channel_demote(channel_id, user_id, ok_cb, false)
         if result.username then
-            text = "@"..result.username.." خطـيهَ تمَ تنزيله 😢 منْ ألآَدأرهَ لتبجي جرَأَرهَ كلـبيَ 💔"
+            text = "@"..result.username.." خطيه تم تنزيله 😿 من الادارة لتبجي كبد عمري  💔 "
             send_large_msg(channel_id, text)
         else
-            text = "@"..result.peer_id.." خطـيهَ تمَ تنزيله 😢 منْ ألآَدأرهَ لتبجي جرَأَرهَ كلـبيَ 💔"
+            text = "@"..result.peer_id.." خطيه تم تنزيله 😿 من الادارة لتبجي كبد عمري  💔 "
             send_large_msg(channel_id, text)
         end
         local receiver = extra.channel
@@ -933,9 +933,9 @@ local function in_channel_cb(cb_extra, success, result)
   local member = cb_extra.username
   local memberid = cb_extra.user_id
   if member then
-    text = 'لايوجد عضو @'..member..' في هاذه المجموعه.'
+    text = 'لايوجد عضو @'..member..' في هذه المجموعه.'
   else
-    text = 'لايوجد عضو  ['..memberid..'] في هاذه المجموعه.'
+    text = 'لايوجد عضو  ['..memberid..'] في هذه المجموعه.'
   end
 if get_cmd == "channel_block" then
   for k,v in pairs(result) do
@@ -949,10 +949,10 @@ if get_cmd == "channel_block" then
         return send_large_msg("channel#id"..channel_id, "Leave using kickme command")
       end
       if is_momod2(user_id, channel_id) and not is_admin2(sender) then
-        return send_large_msg("channel#id"..channel_id, "❌ لاتمسلت بكيفك لايمكنك طرد الادمن أو المديرَ❗️")
+        return send_large_msg("channel#id"..channel_id, "❌ لا تلعب بكيفك لايمكنك طرد الادمن او المديرَ❗️")
       end
       if is_admin2(user_id) then
-        return send_large_msg("channel#id"..channel_id, "❌ لا تمسلت  بكيفك لايمكنك طرد الاداري❗️")
+        return send_large_msg("channel#id"..channel_id, "❌ لا تلعب  بكيفك لايمكنك طرد الاداري❗️")
       end
       if v.username then
         text = ""
@@ -974,10 +974,10 @@ elseif get_cmd == "رفع اداري" then
       local channel_id = "channel#id"..cb_extra.msg.to.id
       channel_set_admin(channel_id, user_id, ok_cb, false)
       if v.username then
-        text = "@"..v.username.." ["..v.peer_id.."] 💢 بَعـدَ شـتريَدْ 😍 منَ ربـَكَ تَمَ رفعَكَ فَي ألآَدرهَ  💪"
+        text = "@"..v.username.." ["..v.peer_id.."] 💢 بعد شتريد 😻 من ربك تم رفعك في الاداره شدلك محرك جـارجـر  💪"
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] set admin @"..v.username.." ["..v.peer_id.."]")
       else
-        text = "["..v.peer_id.."] 💢 بَعـدَ شـتريَدْ 😍 منَ ربـَكَ تَمَ رفعَكَ فَي ألآَدرهَ 💪"
+        text = "["..v.peer_id.."] 💢 بعد شتريد 😻 من ربك تم رفعك في الاداره شدلك محرك جـارجـر  💪"
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] set admin "..v.peer_id)
       end
       if v.username then
@@ -1089,7 +1089,7 @@ local function run(msg, matches)
                 return
             end
             if is_super_group(msg) then
-                return reply_msg(msg.id, 'المجموعه بالتأكيد ☑️ تم تفعيلها ✋😾َ', ok_cb, false)
+                return reply_msg(msg.id, 'المجموعه بالتأكيد ☑️ تم تفعيلها ✋💢️', ok_cb, false)
             end
             print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") added")
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] added SuperGroup")
@@ -1121,7 +1121,7 @@ local function run(msg, matches)
             if not is_owner(msg) and not is_support(msg.from.id) then
                 return
             end
-            member_type = '❤قائمة الاداريين ❤️'
+            member_type = '💢 قائمه الاداريين 💢'
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup Admins list")
             admins = channel_get_admins(receiver,callback, {receiver = receiver, msg = msg, member_type = member_type})
         end
@@ -1132,7 +1132,7 @@ local function run(msg, matches)
                 return "✋🏻❌ لا يوجد مدير في المجموعه ننتظر انتخاباتكم لتعين المدير 😂😚"
             end
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
-            return "❤️ مدير المجموعة المحترم ❤️ ["..group_owner..']'
+            return "💢 مدير المجموعة المحترم 💢 ["..group_owner..']'
         end
 
         if matches[1] == "الادمنيه" then
@@ -1281,7 +1281,7 @@ local function run(msg, matches)
                 return "يرجى ارسال ❗️ [تغير الرابط] ☑️ لانشاء 👍 رابط المجموعه 👥😽"
             end
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-            return "📌 رابط الـمـجـمـوعـه ☑:\n"..group_link
+            return "💢 رابط الـمـجـمـوعـه 💢 :\n"..group_link
         end
 
         if matches[1] == "invite" and is_sudo(msg) then
@@ -1803,7 +1803,7 @@ local function run(msg, matches)
                     unmute(chat_id, msg_type)
                     return msg_type.."تم ☑️ فتح 🔓 الصور 😽"
                 else
-                    return "Mute "..msg_type.."الصور 📷 بالفعل ☑️ تم فتحها ����✋"
+                    return "Mute "..msg_type.."الصور 📷 بالفعل ☑️ تم فتحها 🔓✋"
                 end
             end
             if matches[2] == 'الفيديو' then

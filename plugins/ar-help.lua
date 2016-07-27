@@ -1,6 +1,6 @@
 do 
 
-function run(msg, matches) 
+function mohammed(msg, matches) 
   return [[ 
 ⱲєℓϚ๏๓є ₮๏ Ͳћє ꝕᴙịⱴạτє ⱳ๑ᴙℓᴆ
 🃏〰〰〰〰〰〰〰〰〰🃏
@@ -31,6 +31,6 @@ usage = "Help list",
 patterns = { 
 "^(الاوامر)$", 
 }, 
-run = run 
+run = mohammed 
 } 
 end

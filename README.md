@@ -1,117 +1,88 @@
-💢 DEV TH3_BOSS 💢
-كيفية تنصيب بوت الزعيم التحديث الاخير 2016
+قـــــنأْةَ ألسـورسَ ✋🏿👇🏻Source channel
 
-TH3 BOSS BOT
+ASD_KARBALA
 
- Let's install the bot.
-افتـح ترمنـــأل وخلي   
+# Let's install the bot.
+افتـح ترمنـــأل وخلي 👇🏿 Open Terminal and vinegary
 
 sudo apt-get update 
 
-🔸➖🔹➖🔸➖🔹➖
-
-ورهأَ خلي  
+ورهأَ خلي 👇🏿 And vinegary
 
 redis-server
+تركه مفتوح✋🏿  Leave it open Terminal
 
-🔸➖🔹➖🔸➖🔹➖
-تركه مفتوح    
-
-🔸➖🔹➖🔸➖🔹➖
-وفتح ترمنال ثاني وخلي    
-
-🔸➖🔹➖🔸➖🔹➖
-
-ورهأ خلي    
-
+وفتح ترمنال ثاني وخلي 👇🏿 Open Terminal and second vinegary
+************************************************************
 sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes
-🔸➖🔹➖🔸➖🔹➖
-
-ورأهأَ خلي  
-git clone https://github.com/moody2020/TH3_BOSS.git
-
-🔸➖🔹➖🔸➖🔹➖
-
-ورهأ خلي    
-
-cd TH3_BOSS
-
-🔸➖🔹➖🔸➖🔹➖
-
-ورهأَ خلي 
-
+************************************************************
+ورأهأَ خلي👇🏿
+**************
+git clone https://github.com/SAJJAD94/ASD_KARBALA.git
+*****************************************************
+ورهأ خلي 👇🏿 And vinegary
+**************************
+cd ASD_KARBALA
+**************************
+ورهأَ خلي👇🏿 And vinegary
+**************************
 chmod +x launch.sh
-
-🔸➖🔹➖🔸➖🔹➖
-
-ورهأَ خلي 
-
+**************************
+ورهأَ خلي👇🏿 And vinegary
+**************************
 ./launch.sh install
-
-🔸➖🔹➖🔸➖🔹➖
-
-ورهأَ خلي  
-
+**************************
+ورهأَ خلي👇🏿 And vinegary
+**************************
 ./launch.sh 
+**************************
+يطلب رقم خلي رقم البوت ✋🏿😘
+مبروك عليك افضل بوت عل تلي 😍
 
-🔸➖🔹➖🔸➖🔹➖
-يطلب رقم خلي رقم البوت 
-مبروك عليك افضل بوت عل تلي 
+# Enter a phone number & confirmation code.
+Congratulations, you better bot
+One command
 
-عندك استفسار او اي شي تدلل 
-@TH3BOSS
-واذا محظور تعال على بوت التواصل
-@ll60Kllbot
-قناة السورس 
-@llDEV1ll
-🔸➖🔹➖🔸➖🔹➖
- One command
 To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
 
-لتنصيب البوـب بكوَدَ واحد فقط َ   
+لتنصيب البوـب بكوَدَ واحد فقط َ ✋🏿:kissing_heart:👇🏿 To install one code
 
-فتح ترمنال وخلي   
-🔸➖🔹➖🔸➖🔹➖
-sudo apt-get update 
-🔸➖🔹➖🔸➖🔹➖
-ورهأَ خلي  
+فتح ترمنال وخلي 👇🏿 Open Terminal and vinegary
+
+sudo apt-get update
+
+ورهأَ خلي 👇🏿 And vinegary
 
 redis-server
-🔸➖🔹➖🔸➖🔹➖
-تركه مفتوح   
 
-وفتح ترمنال ثاني وخلي  
-```sh
+تركه مفتوح✋🏿 Leave it open Terminal
 
-sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes && git clone https://github.com/moody2020/TH3_BOSS.git && cd TH3_BOSS && chmod +x launch.sh && ./launch.sh install && ./launch.sh
-```
+وفتح ترمنال ثاني وخلي 👇🏿 Open Terminal and second vinegary
 
-🔸➖🔹➖🔸➖🔹➖
-يطلب رقم خلي رقم البوت 
-مبروك عليك افضل بوت عل تلي 
+sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes && git clone https://github.com/SAJJAD94/ASD_KARBALA.git && cd ASD_KARBALA && chmod +x launch.sh && ./launch.sh install && ./launch.sh
+يطلب رقم خلي رقم البوت ✋🏿:kissing_heart: مبروك عليك افضل بوت عل تلي :heart_eyes:
 
- Enter a phone number & confirmation code.
+Enter a phone number & confirmation code.
+
 Congratulations, you better bot
 
- Realm configuration
+Realm configuration
 
-After you run the bot for first time, send it `!id`. Get your ID and stop the bot.
+After you run the bot for first time, send it !id. Get your ID and stop the bot.
 
-Open ./data/config.lua and add your ID to the "sudo_users" section in the following format:
- لتصبح مطور بوتك غير الايدي خاص كونفج بايديك 
-```
+Open ./data/config.lua and add your ID to the "sudo_users" section in the following format: ✋🏿 لتصبح مطور بوتك غير الايدي خاص كونفج بايديك 👇🏿
+
   sudo_users = {
-    226861861,
+    18293081,
     0,
     YourID
   }
-```
- مـبروَك أصبَحتـَ مـطورَ بوـتكَ لتوأصل معي 
+:kissing_heart: مـبروَك أصبَحتـَ مـطورَ بوـتكَ لتوأصل معي
 
-Dev :   [@TH3BOSS](https://telegram.me/TH3BOSS)
-Dev_BOT :  [@ll60KllBOT](https://telegram.me/ll60KllBOT)
-Dev_Channel : [@llDEV1ll](https://telegram.me/llDEV1ll)
-عندكَ فكره تطوير السورس او البوت تفظل هنأَ🏿️
-You have an idea to develop Alsoors or bot prefer 🏿️
+Dev : @SAJJADNOORI
 
-(https://telegram.me/TH3BOSS)
+Dev_BOT : @S94_BOT
+
+Dev_Channel : @S94IQ
+
+عندكَ فكره تطوير السورس او البوت تفظل هنأَ☝🏿️ You have an idea to develop Alsoors or bot prefer ☝🏿️✋🏿

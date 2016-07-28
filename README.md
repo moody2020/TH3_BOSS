@@ -43,23 +43,13 @@ chmod +x launch.sh
 يطلب رقم خلي رقم البوت 
 مبروك عليك افضل بوت عل تلي 
 
-عندنك استفسار او اي شي تدلل 
+عندك استفسار او اي شي راسلني
 @TH3BOSS
 واذا محظور تعال على بوت التواصل
 @ll60Kllbot
+قـنـاة الـسـورس
+@llDEV1ll
 
-طبعا هنا بالتنصيب الجديد اكو طريقتين لتشغيل البوت
-1_ وهي تشغيل البوت نفس الطريقة القديمة مجرد تطي رن للبوت
-2_ وهي الطريقة الجدية والافضل من الرن وهي السكرابت التشغيل عن طريق فتح ترمنال وتكتب الاوامر الجوة
-
-1_killall -w bash
-2_killall tmux
-3_cd TH3_BOSS
-4_bash TH3BOSS.sh -t
-
-Dev :   [@TH3BOSS](https://telegram.me/TH3BOSS)
-Dev_BOT :  [@ll60KllBOT](https://telegram.me/ll60KllBOT)
-Dev_Channel : [@llDEV1ll](https://telegram.me/llDEV1ll)
  Enter a phone number & confirmation code.
 Congratulations, you better bot
 ```

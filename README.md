@@ -7,15 +7,19 @@ TH3 BOSS BOT
 افتـح ترمنـــأل وخلي   
 
 sudo apt-get update 
+
 🔸➖🔹➖🔸➖🔹➖
 
 ورهأَ خلي  
 
 redis-server
+
 🔸➖🔹➖🔸➖🔹➖
 تركه مفتوح    
+
 🔸➖🔹➖🔸➖🔹➖
 وفتح ترمنال ثاني وخلي    
+
 🔸➖🔹➖🔸➖🔹➖
 
 ورهأ خلي    

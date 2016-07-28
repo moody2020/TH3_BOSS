@@ -1,13 +1,13 @@
 do 
 
-local function run(msg, matches) 
+local function mohammed(msg, matches) 
 
 if ( msg.text ) then
 
   if ( msg.to.type == "user" ) then
 
-return "للتحدث مع المطور اضغط على المعرف التالي \n🔹  @TH3BOSS \n او اذا محظور اضغط هنا \n🔹  @ll60Kllbot\n قنأة البوت \n🔹  @llDEV1ll "     
-  end 
+return "للتحدث مع المطور اضغط على المعرف التالي \n 💢 @TH3BOSS \n او اذا محظور اضغط هنا \n 💢  @ll60Kllbot\n  قناة الـسـورس \n 💢  @llDEV1ll"
+  end
    
 end 
 
@@ -19,7 +19,7 @@ return {
   patterns = { 
        "(.*)$"
   }, 
-  run = run, 
+  run = mohammed, 
 } 
 
 end 

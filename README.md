@@ -1,8 +1,6 @@
  💢 DEV TH3_BOSS 💢
  كيفية تنصيب بوت الزعيم التحديث الاخير 2016
  
-  TH3 BOSS BOT 
-
 ```sh
 
  Let's install the bot.

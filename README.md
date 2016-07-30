@@ -22,11 +22,11 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 🔸➖🔹➖🔸➖🔹➖
 ورأهأَ خلي  
 
-git clone https://github.com/moody2020/TH3_BOSS.git
+git clone https://github.com/moody2020/TH3BOSS.git
 🔸➖🔹➖🔸➖🔹➖
 ورهأ خلي    
 
-cd TH3_BOSS
+cd TH3BOSS
 🔸➖🔹➖🔸➖🔹➖
 ورهأَ خلي 
 🔸➖🔹➖🔸➖🔹➖

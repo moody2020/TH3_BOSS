@@ -58,7 +58,6 @@ do local _ = {
     "nedme",
     "writer",
     "@TH3BOSS",
-    "id",
     "kickall",
     "run",
      "delete",

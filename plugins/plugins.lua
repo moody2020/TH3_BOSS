@@ -41,17 +41,17 @@ local function list_all_plugins(only_enabled)
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '✔' 
+        status = '☑️' 
       end
       nact = nact+1
     end
-    if not only_enabled or status == '✔' then
+    if not only_enabled or status == '☑️' then
       -- get the name
       v = string.match (v, "(.*)%.lua")
       text = text..nsum..'. '..v..'  '..status..'\n'
     end
   end
-  local text = text..'\n الملفات المثبته 🔨. '..nsum..'\nالملفات المفعله ✔️ .'..nact..'\nغير مفعل 🚫 '..nsum-nact..''
+  local text = text..'\n الملفات المثبته 🔨. '..nsum..'\nالملفات المفعله ☑️.'..nact..'\nغير مفعل 🚫 '..nsum-nact..''
   return text
 end
 
@@ -60,18 +60,18 @@ local function list_plugins(only_enabled)
   local text = ''
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
-    --  ✔ enabled, ❌ disabled
+    --  ☑️ enabled, ❌ disabled
     local status = '❌'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '✔' 
+        status = '☑️' 
       end
       nact = nact+1
     end
-    if not only_enabled or status == '✔' then
+    if not only_enabled or status == '☑️' then
       -- get the name
       v = string.match (v, "(.*)%.lua")
       text = text..v..'  '..status..'\n'
@@ -92,7 +92,7 @@ local function enable_plugin( plugin_name )
   print('checking if '..plugin_name..' exists')
   -- Check if plugin is enabled
   if plugin_enabled(plugin_name) then
-    return 'اَلـَمِلفَ 📙 '..plugin_name..' مفـَعـلَِ 👍🏻 ✔️'
+    return 'الـمـلـف 📙 '..plugin_name..' مـفـعـل 👍🏻 ☑️'
   end
   -- Checks if plugin exists
   if plugin_exists(plugin_name) then
@@ -103,19 +103,19 @@ local function enable_plugin( plugin_name )
     -- Reload the plugins
     return reload_plugins( )
   else
-    return ''..plugin_name..' ✋🏿لآَ يـَوْجـدِ مـلفَ 📙 بأسـم '
+    return ''..plugin_name..' ✋🏿لا يـوجـد مـلـف 📙 بـاسـم '
   end
 end
 
 local function disable_plugin( name, chat )
   -- Check if plugins exists
   if not plugin_exists(name) then
-    return ''..name..' ✋🏿لآَ يـَوْجـدِ مـلفَ 📙 بأسـم '
+    return ''..name..' ✋🏿لا يـوجـد مـلـف 📙 بـاسـم '
   end
   local k = plugin_enabled(name)
   -- Check if plugin is enabled
   if not k then
-    return 'اَلـَمِلفَ 📙 '..name..' غـيرَ مفـَعـلَِ 👍🏻 ❌'
+    return 'اَلـَمِلفَ 📙 '..name..' غـيـر مـفـعـل 👍🏻 ❌'
   end
   -- Disable and reload
   table.remove(_config.enabled_plugins, k)

@@ -32,11 +32,11 @@ local function mohammed(msg, matches)
             
                     local hash = 'mate:'..msg.to.id
                     redis:set(hash, true)
-                    return "تم ☑️ قفل 🔒 اعاده توجيه ✋😽"
+                    return 'تم ☑️ قفل 🔒 اعاده توجيه ✋😽\n\n 💢 Order by :️ @'..msg.from.username
   elseif is_momod(msg) and matches[1] == 'فتح اعاده توجيه' then
       local hash = 'mate:'..msg.to.id
       redis:del(hash)
-      return "تم ☑️ فتح 🔓 اعاده توجيه ✋😽"
+      return 'تم ☑️ فتح 🔓 اعاده توجيه ✋😽\n\n 💢 Order by :️ @'..msg.from.username
 end
 
 end

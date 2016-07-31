@@ -17,7 +17,7 @@ local chat = msg.to.id
     if redis:get(moody) and msg.media and not is_momod(msg) then 
 
             delete_msg(msg.id, ok_cb, false) 
-local test = "عزيزي~["..msg.from.first_name.."]".."\n".."يمنع نشر صور فيديوهات صوتيات وكافة الميديا هنا ان تكرر الامر سوف تجبرني على طردك🙂☝️".."\n".." 🔹 username : @"..(msg.from.username or " ") 
+local test = "عزيزي~["..msg.from.first_name.."]".."\n".."يمنع نشر صور فيديوهات صوتيات وكافة الميديا هنا ان تكرر الامر سوف تجبرني على طردك😼☝️".."\n".." 💢 username : @"..(msg.from.username or " ") 
 reply_msg(mohammed, test, ok_cb, true) 
 
 end 
@@ -31,18 +31,18 @@ local mohammed = msg['id']
     if matches[1] == 'قفل الوسائط'  and is_momod(msg) then 
                     local th3boss= 'mate:'..msg.to.id 
                     redis:set(th3boss, true) 
-local boss = '☑️ تم قفل 🔒 جميع الوسائط 🔕 '
+local boss = '☑️ تم قفل 🔒 جميع الوسائط 🔕 \n\n 💢 Order by :️ @'..msg.from.username
 reply_msg(mohammed, boss, ok_cb, true) 
 elseif matches[1] == 'قفل الوسائط' and not is_momod(msg) then 
-local moody = 'للمشرفين فقط🔴' 
+local moody = 'للمشرفين فقط 💢'
 reply_msg(mohammed, moody, ok_cb, true) 
   elseif is_momod(msg) and matches[1] == 'فتح الوسائط' then
       local th3boss= 'mate:'..msg.to.id
       redis:del(th3boss)
-local boss = '☑️ تم فتح جميع الوسائط 🔓🔔 '
+local boss = '☑️ تم فتح جميع الوسائط 🔓🔔 \n\n 💢 Order by :️ @'..msg.from.username
 reply_msg(mohammed, boss, ok_cb, true) 
 elseif matches[1] == 'فتح الوسائط' and not is_momod(msg) then 
-local moody= 'للمشرفين فقط🔴' 
+local moody= 'للمشرفين فقط 💢'
 reply_msg(mohammed, moody, ok_cb, true) 
 end 
 end 

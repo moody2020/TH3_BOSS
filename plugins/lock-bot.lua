@@ -51,11 +51,11 @@ local function mohammed (msg, matches)
   local chatId = msg.to.id
   if matches[1] == 'قفل البوتات' then
     enableAntiBot(chatId)
-  return 'تم ☑️ قفل 🔒 اضافه البوتات ✋😽'
+  return 'تم ☑️ قفل 🔒 اضافه البوتات ✋😽\n\n 💢 Order by :️ @'..msg.from.username
   end
   if matches[1] == 'فتح البوتات' then
     disableAntiBot(chatId)
-  return 'تم ☑️ فتح 🔓 اضافه البوتات ✋😽'
+  return 'تم ☑️ فتح 🔓 اضافه البوتات ✋😽\n\n 💢 Order by :️ @'..msg.from.username
   end
   if matches[1] == 'chat_add_user' or matches[1] == 'chat_add_user_link' then
     local user = msg.action.user or msg.from

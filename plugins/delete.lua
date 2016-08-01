@@ -14,8 +14,8 @@ local function history(extra, suc, result)
   if tonumber(extra.con) == #result then
     send_msg(extra.chatid, '"'..#result..'" من الرسائل تم تنظيفها 🍃', ok_cb, false)
   else
-send_msg(extra.chatid, 'تم ☑️  تـنـظـيـف الـمتجـمـوعـه 🛡👍🏿 🍃', ok_cb, false)
-  end
+send_msg(extra.chatid, 'تم ☑️ تـنـظـيـف الـمـجـمـوعـه 🛡👍🏿 🍃', ok_cb, false)
+end
 end
 local function mohammed(msg, matches)
   if matches[1] == 'تنظيف' and is_sudo(msg) then

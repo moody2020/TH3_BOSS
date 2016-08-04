@@ -212,39 +212,77 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-	"admin",
-    "onservice",
-    "inrealm",
+ "badword",
+     "admin",
     "ingroup",
-    "inpm",
-    "banhammer",
     "stats",
     "anti_spam",
     "owners",
     "arabic_lock",
     "set",
     "get",
-    "broadcast",
     "invite",
     "all",
     "leave_ban",
-	"supergroup",
-	"whitelist",
-	"msg_checks"
+    "setwelcome",
+    "msg_checks",
+    "Hello",
+    "isup",
+    "onservice",
+    "supergroup",
+    "banhammer",
+    "broadcast",
+    "badword",
+    "robot",
+    "addsudo",
+    "insta",
+    "info",
+    "textphoto",
+    "lock-bot",
+    "lock-fwd",
+    "me",
+    "plugins",
+    "en-plugins",
+    "image",
+    "sticker",
+    "map",
+    "voice",
+    "getlink",
+    "getfile",
+    "TH3BOSS",
+    "TH3BOSSVIRSON",
+    "TH3BOSS1",
+    "TH3BOSS2",
+    "TH3BOSS3",
+    "TH3BOSS4",
+    "TH3BOSS5",
+     "TH3BOSS6",
+    "TH3BOSS7",
+    "newgroup",
+    "replay",
+    "help",
+    "stats",
+    "lock_media",
+   "decoration",
+    "nedme",
+    "writer",
+    "@TH3BOSS",
+    "kickall",
+    "run",
+     "delete",
+    "Serverinfo",
+    "leavebot",
+
     },
-    sudo_users = {110626080,103649648,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {226861861},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v4
+    about_text = [[TH3BOSS v5
 An advanced administration bot based on TG-CLI written in Lua
 
-https://github.com/sajjad94/ASD_KARBALA
+https://github.com/moody2020/TH3BOSS
 
 Admins
-@iwals [Founder]
-@imandaneshi [Developer]
-@POTUS [Developer]
-@seyedan25 [Manager]
-@aRandomStranger [Admin]
+@TH3BOSS
 
 Special thanks to
 awkward_potato

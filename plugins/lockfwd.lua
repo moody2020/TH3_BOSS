@@ -20,23 +20,17 @@ local function pre_process(msg)
     
         return msg
     end
-
-  
-
-
 local function mohammed(msg, matches)
     chat_id =  msg.to.id
     
     if is_momod(msg) and matches[1] == 'قفل اعاده توجيه' then
-      
-            
                     local hash = 'mate:'..msg.to.id
                     redis:set(hash, true)
-                    return 'تم ☑️ قفل 🔒 اعاده توجيه ✋😽\n\n 💢 Order by :️ @'..msg.from.username
+                    return 'تم ☑️ قفل 🔒 اعاده توجيه ✋😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
   elseif is_momod(msg) and matches[1] == 'فتح اعاده توجيه' then
       local hash = 'mate:'..msg.to.id
       redis:del(hash)
-      return 'تم ☑️ فتح 🔓 اعاده توجيه ✋😽\n\n 💢 Order by :️ @'..msg.from.username
+      return 'تم ☑️ فتح 🔓 اعاده توجيه ✋😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
 end
 
 end

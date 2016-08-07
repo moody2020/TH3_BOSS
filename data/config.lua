@@ -39,7 +39,7 @@ do local _ = {
     "getlink",
     "getfile",
     "TH3BOSS",
-    "TH3BOSSVIRSON",
+    "VIRSON",
     "TH3BOSS1",
     "TH3BOSS2",
     "TH3BOSS3",

@@ -7,7 +7,6 @@
 ▀▄ ▄▀      ban hammer  : الطرد والحظر      ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
-
 local function pre_process(msg)
   local data = load_data(_config.moderation.data)
   -- SERVICE MESSAGE
@@ -145,7 +144,7 @@ local function run(msg, matches)
 local support_id = msg.from.id
  if matches[1]:lower() == 'ايدي' and msg.to.type == "chat" or msg.to.type == "user" then
     if msg.to.type == "user" then
-      return "💢    ايدي البوت : "..msg.to.id.. "\n\n💢    ايدي حسابك : "..msg.from.id.. "\n مـطـور الـسـورس\n الــــزعـــيـــــم > @TH3BOSS 💢 "
+      return "🔺    ايدي البوت : "..msg.to.id.. "\n\n🔺    ايدي حسابك : "..msg.from.id.. "\n مـطـور الـسـورس\n الــــزعـــيـــــم > @TH3BOSS 🔺 "
     end
     if type(msg.reply_id) ~= "nil" then
       local print_name = user_print_name(msg.from):gsub("‮", "")

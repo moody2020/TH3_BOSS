@@ -1778,9 +1778,9 @@ local function run(msg, matches)
                 if not is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
                     mute(chat_id, msg_type)
-                    return "Mute "..msg_type.."  has been enabled"
+                    return "Mute "..msg_type..'     تم قفل المجموعه بنجاح 🔓😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
                 else
-                    return "Mute "..msg_type.." is already on"
+                    return "Mute "..msg_type..'  تم بالفعل قفل المجموعه بنجاح 🔓😽 \n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
                 end
             end
         end

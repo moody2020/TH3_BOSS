@@ -489,12 +489,12 @@ local function unset_public_membermod(msg, data, target)
     save_data(_config.moderation.data, data)
   end
   if group_public_lock == 'no' then
-    return '❌المجموعه ليست ✋عامه ❗️😽'
+    return '❌المجموعه ليست ✋عامه ❗️😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
   else
     data[tostring(target)]['settings']['public'] = 'no'
     data[tostring(target)]['long_id'] = msg.to.long_id 
     save_data(_config.moderation.data, data)
-    return 'المجموعه الان ☑️ ليست ✋ عامه ❌😽'
+    return 'المجموعه الان ☑️ ليست ✋ عامه ❌😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
   end
 end
 
@@ -1730,7 +1730,7 @@ local function run(msg, matches)
                     mute(chat_id, msg_type)
                     return msg_type..'  تم ☑️ قفل 🔒 الصور 📷✋\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
                 else
-                    return ""..msg_type..'  الصور بالفعل ☑️ تم فتحها 📷✋\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
+                    return ""..msg_type..'  الصور بالفعل ☑️ تم قفلها 📷✋\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
                 end
             end
             if matches[2] == 'الفيديو' then

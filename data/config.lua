@@ -60,7 +60,8 @@ do local _ = {
      "delete",
     "Serverinfo",
     "leave_bot",
-
+  "kickme",
+    "utorun",
   },
   help_text = "",
   help_text_realm = "",

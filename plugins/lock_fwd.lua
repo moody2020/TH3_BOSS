@@ -7,40 +7,53 @@
 ▀▄ ▄▀   ANTI FWD  :  منع اعاده توجيه           ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
-do
 
+do
 local function pre_process(msg)
-    
-    --Checking mute
-    local hash = 'mate:'..msg.to.id
-    if redis:get(hash) and msg.fwd_from and not is_sudo(msg) and not is_owner(msg) and not is_momod(msg)  then
+
+    local fwd = 'mate:'..msg.to.id
+    if redis:get(fwd) and not is_momod(msg) and msg.fwd_from then
             delete_msg(msg.id, ok_cb, true)
-            return "done"
-        end
-    
+            return msg
+end
         return msg
     end
-local function mohammed(msg, matches)
-    chat_id =  msg.to.id
     
-    if is_momod(msg) and matches[1] == 'قفل اعاده توجيه' then
-                    local hash = 'mate:'..msg.to.id
-                    redis:set(hash, true)
-                    return 'تم ☑️ قفل 🔒 اعاده توجيه ✋😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
-  elseif is_momod(msg) and matches[1] == 'فتح اعاده توجيه' then
-      local hash = 'mate:'..msg.to.id
-      redis:del(hash)
-      return 'تم ☑️ فتح 🔓 اعاده توجيه ✋😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
+ local function mohammed(msg, matches)
+     chat_id = msg.to.id
+local reply_id = msg['id']
+     if is_momod(msg) and matches[1]== 'قفل' and matches[2]== 'اعاده توجيه' then
+         local fwd = 'mate:'..msg.to.id
+         redis:set(fwd, true)
+         local text = 'تم ☑️ قفل 🔒 اعاده توجيه ✋😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
+         return reply_msg(reply_id, text, ok_cb, false)
+         end
+local reply_id = msg['id']
+    if not is_momod(msg) and matches[1]== 'قفل' and matches[2]== 'اعاده توجيه' then
+    local text= '❌ للمشرفين فقط 😻'
+ return reply_msg(reply_id, text, ok_cb, false)
+end
+local reply_id = msg['id']
+if is_momod(msg) and matches[1]== 'فتح' and matches[2]== 'اعاده توجيه' then
+    local fwd = 'mate:'..msg.to.id
+    redis:del(fwd)
+    local text = 'تم ☑️ فتح 🔓 اعاده توجيه ✋😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
+    return reply_msg(reply_id, text, ok_cb, false)
 end
 
-end
+local reply_id = msg['id']
+if not is_momod(msg) and matches[1]== 'فتح' and matches[2]== 'اعاده توجيه' then
+local text = '❌ للمشرفين فقط 😻'
+ return reply_msg(reply_id, text, ok_cb, false)
+ end
 
+end
 return {
-    patterns = {
-        '^(قفل اعاده توجيه)$',
-        '^(فتح اعاده توجيه)$'
+    patterns ={
+        '^(قفل) (اعاده توجيه)$',
+        '^(فتح) (اعاده توجيه)$'
     },
-    run = mohammed,
-    pre_process = pre_process
+run = mohammed,
+pre_process = pre_process 
 }
 end

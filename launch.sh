@@ -120,18 +120,6 @@ else
     echo "Run $0 install"
     exit 1
   fi
-  fi
-  
-  chmod 777 TH3BOSS.lua
-  
-  #Adding some color. By @MehdiHS
-   echo -e "\033[38;5;208m"
-   echo -e "     > DEV : MOHAMMED HISHAM                                             "
-   echo -e "     > DEV : @TH3BOSS                                                "
-   echo -e "     > Bot ID : DEV : @ll60Kllbot                             "
-   echo -e "     > Github : https://github.com/moody2020/TH3BOSS    "
-   echo -e "          BY мσнαммє∂ нιѕнαм                                    \033[0;00m"
-   echo -e "\e[36m"
   rm -r ../.telegram-cli/state #Prevent tg from crash
   ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/TH3BOSS.lua -l 1 -E $@
 fi

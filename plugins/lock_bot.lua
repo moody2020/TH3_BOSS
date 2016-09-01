@@ -49,13 +49,14 @@ local function mohammed (msg, matches)
   end
 
   local chatId = msg.to.id
-  if matches[1] == 'lock bots' then
+  if matches[1] == 'قفل البوتات' then
     enableAntiBot(chatId)
-  return 'Bots has ☑️ been locked 🔒😽'
+  return 'تم ☑️ قفل 🔒 اضافه البوتات ✋😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
   end
-  if matches[1] == 'open bots' then
+  if matches[1] == 'فتح البوتات' then
     disableAntiBot(chatId)
-  return 'Bots has ☑️ been unlocked 🔓😽'
+  return 'تم ☑️ فتح 🔓 اضافه البوتات ✋😽\n🔺Order By : @'..msg.from.username..'\n🔻Order By : '.. msg.from.id..'\n'
+  end
   if matches[1] == 'chat_add_user' or matches[1] == 'chat_add_user_link' then
     local user = msg.action.user or msg.from
     if isABotBadWay(user) then
@@ -69,7 +70,7 @@ local function mohammed (msg, matches)
           print('')
         end
       end
-    
+    end
   end
 end
 
@@ -80,8 +81,8 @@ return {
     '/bot unlock: unlock add bots to supergroup'
   },
   patterns = {
-    '^(lock bots)$',
-    '^(open bots)$',end
+    '^(قفل البوتات)$',
+    '^(فتح البوتات)$',
     '^!!tgservice (chat_add_user)$',
     '^!!tgservice (chat_add_user_link)$'
   },

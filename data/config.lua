@@ -22,7 +22,6 @@ do local _ = {
     "banhammer",
     "broadcast",
     "badword",
-    "robot",
     "addsudo",
     "insta",
     "info",
@@ -61,7 +60,7 @@ do local _ = {
     "Serverinfo",
     "leave_bot",
   "kickme",
-    "utorun",
+
   },
   help_text = "",
   help_text_realm = "",

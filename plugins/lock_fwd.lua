@@ -30,7 +30,7 @@ local reply_id = msg['id']
          end
 local reply_id = msg['id']
     if not is_momod(msg) and matches[1]== 'قفل' and matches[2]== 'اعاده توجيه' then
-    local text= '❌ للمشرفين فقط 😻'
+    local text= 'للـمـشـرفـيـن فـقـط 👮🖕🏿'
  return reply_msg(reply_id, text, ok_cb, false)
 end
 local reply_id = msg['id']
@@ -43,7 +43,7 @@ end
 
 local reply_id = msg['id']
 if not is_momod(msg) and matches[1]== 'فتح' and matches[2]== 'اعاده توجيه' then
-local text = '❌ للمشرفين فقط 😻'
+local text= ' للـمـشـرفـيـن فـقـط 👮🖕🏿'
  return reply_msg(reply_id, text, ok_cb, false)
  end
 

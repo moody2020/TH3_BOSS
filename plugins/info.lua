@@ -180,7 +180,6 @@ local function run(msg, matches)
    local text = '▫️ الاسم الاول : '..(msg.from.first_name or '----')..'\n'
    local text = text..'▫️ الاسم الاخير : '..(msg.from.last_name or '----')..'\n'    
    local text = text..'▫️  المعرف : '..Username..'\n'
-   local text = text..'▫️ رقم هاتفك : '..(msg.from.phone or 'لايوجد')..'\n'    
    local text = text..'▫️ ايدي : '..msg.from.id..'\n'
    local text = text..'▫️ اسم المجموعه : '..msg.to.title..'\n'
    local text = text..'▫️ ايدي المجموعه : '..msg.to.id..'\n'

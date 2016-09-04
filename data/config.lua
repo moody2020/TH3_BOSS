@@ -1,5 +1,5 @@
 do local _ = {
-  about_text = "🚩Welcome to TH3BOSS V6 For more information Subscribe to the channel @llDEV1lln\n https://github.com/moody2020/TH3BOSS\n\n🚩Dev @TH3BOSS\n\n🚩 Dev Bot @ll60Kllbot\n\n 🚩channel @llDEV1ll",
+  about_text = "▫️Welcome to TH3BOSS V6 For more information Subscribe to the channel @llDEV1lln\n https://github.com/moody2020/TH3BOSS\n\n▫️Dev @TH3BOSS\n\n▫️ Dev Bot @ll60Kllbot\n\n ▫️channel @llDEV1ll",
   enabled_plugins = {
      "badword",
      "admin",

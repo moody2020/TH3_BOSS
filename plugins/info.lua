@@ -212,8 +212,7 @@ local function run(msg, matches)
      text = text..'▫️ اسم المجموعه : '..msg.to.title..'\n'
      text = text..'▫️ ايدي المجموعه : '..msg.to.id
     end
-text = text..'▪️ عدد الرسائل المرسله : '..user_info_msgs..'\n\n'
-  text = text..'▪️  مـطـور الـسـورس\n▪️ الـزعـيـم > @TH3BOSS'
+
     return send_msg(receiver, text, ok_cb, true)
     end
   end

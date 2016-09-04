@@ -24,7 +24,7 @@ local function list_variablesbad(msg)
 
   if hash then
     local names = redis:hkeys(hash)
-local text = '❌✋🏻 قائمه المنع الكلمات المحطوره ❌👍 :\n\n'
+local text = '❌✋🏻 قائمه المنع الكلمات المحظوره ❌👍 :\n\n'
     for i=1, #names do
       text = text..'> '..names[i]..'\n'
     end

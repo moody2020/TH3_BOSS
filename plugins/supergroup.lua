@@ -1281,7 +1281,7 @@ return "📌 مدير المجموعة المحترم 📌["..group_owner..']'
                 return "يرجى ارسال ❗️ [تغير الرابط] ☑️ لانشاء 👍 رابط المجموعه 👥😽"
             end
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-            return "👤رابـط الـمجـمـوعـه 👥⁉️:\n"..group_link
+            return "👤 رابـط الـمجـمـوعـه 👥⁉️:\n"..group_link
         end
 
         if matches[1] == "invite" and is_sudo(msg) then

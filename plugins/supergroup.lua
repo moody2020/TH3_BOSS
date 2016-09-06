@@ -1089,7 +1089,7 @@ local function run(msg, matches)
                 return
             end
             if is_super_group(msg) then
-                return reply_msg(msg.id, 'المجموعه بالتأكيد ☑️ تم تفعيلها ✋🌐 ', ok_cb, false)
+                return reply_msg(msg.id, 'المجموعه بالتأكيد ☑️ تم تفعيلها ✋🌐', ok_cb, false)
             end
             print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") added")
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] added SuperGroup")
@@ -1099,7 +1099,7 @@ local function run(msg, matches)
         end
 
         if matches[1] == 'تعطيل' and is_admin1(msg) and not matches[2] then            if not is_super_group(msg) then
-                return reply_msg(msg.id, 'المجموعه بالتأكيد ☑️ تم تعطيلها ✋🌐 ', ok_cb, false)
+                return reply_msg(msg.id, 'المجموعه بالتأكيد ☑️ تم تعطيلها ✋🌐', ok_cb, false)
             end
             print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") removed")
             superrem(msg)
@@ -1121,7 +1121,7 @@ local function run(msg, matches)
             if not is_owner(msg) and not is_support(msg.from.id) then
                 return
             end
-            member_type = '📌قائمة الاداريين 📌'
+            member_type = '📌قائمه الاداريين📌'
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup Admins list")
             admins = channel_get_admins(receiver,callback, {receiver = receiver, msg = msg, member_type = member_type})
         end
@@ -1132,7 +1132,7 @@ local function run(msg, matches)
                 return "✋🏻❌ لا يوجد مدير في المجموعه ننتظر انتخاباتكم لتعين المدير 😹😽"
             end
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
-            return "📌 مدير المجموعة المحترم 📌["..group_owner..']'
+return "📌 مدير المجموعة المحترم 📌["..group_owner..']'
         end
 
         if matches[1] == "الادمنيه" then
@@ -1281,7 +1281,7 @@ local function run(msg, matches)
                 return "يرجى ارسال ❗️ [تغير الرابط] ☑️ لانشاء 👍 رابط المجموعه 👥😽"
             end
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-            return "👥 رابط المجموعه 👤⁉️:\n"..group_link
+            return "👤رابـط الـمجـمـوعـه 👥⁉️:\n"..group_link
         end
 
         if matches[1] == "invite" and is_sudo(msg) then
@@ -1554,14 +1554,14 @@ local function run(msg, matches)
             end
             if matches[2] == 'الادمنيه' then
                 if next(data[tostring(msg.to.id)]['moderators']) == nil then
-                    return 'عذرٱ ⚠️ لا يوجد 🚫 ادمنيه ليتم مسحهم ❌'
+                    return 'عذرٱ ⚠️ لا يوجد 🚫 ادمنيه ليتم مسحهم 📛'
                 end
                 for k,v in pairs(data[tostring(msg.to.id)]['moderators']) do
                     data[tostring(msg.to.id)]['moderators'][tostring(k)] = nil
                     save_data(_config.moderation.data, data)
                 end
                 savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned modlist")
-                return 'تم ☑️ مسح ❌ قائمه الادمنيه بنجاح ❗️'
+                return 'تم ☑️ مسح ❌ قائمه الادمنيه بنجاح 😹📛'
             end
             if matches[2] == 'القوانين' then
                 local data_cat = 'rules'

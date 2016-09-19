@@ -1,8 +1,8 @@
 do local _ = {
   about_text = "▫️Welcome to TH3BOSS V7 For more information Subscribe to the channel @llDEV1lln\n https://github.com/moody2020/TH3BOSS\n\n▫️Dev @TH3BOSS\n\n▫️ Dev Bot @ll60Kllbot\n\n ▫️channel@ llDEV1ll ",
   enabled_plugins = {
-     "badword",
-     "admin",
+    "badword",
+    "admin",
     "ingroup",
     "stats",
     "anti_spam",
@@ -43,24 +43,28 @@ do local _ = {
     "TH3BOSS3",
     "TH3BOSS4",
     "TH3BOSS5",
-     "TH3BOSS6",
+    "TH3BOSS6",
     "TH3BOSS7",
     "newgroup",
     "replay",
     "help",
     "stats",
     "lock_media",
-   "decoration",
+    "decoration",
     "nedme",
     "writer",
     "@TH3BOSS",
     "kickall",
     "run",
-     "delete",
+    "delete",
     "Serverinfo",
     "leave_bot",
-  "kickme",
-
+    "kickme",
+    "addreplay",
+    "addtime",
+    "tagall",
+    "lock_replay",
+    "design"
   },
   help_text = "",
   help_text_realm = "",
@@ -69,7 +73,7 @@ do local _ = {
     data = "data/moderation.json"
   },
   sudo_users = {
-    226861861,
+    226861861
   }
 }
 return _

@@ -153,14 +153,14 @@ local function pre_process(msg)
   return msg 
 end 
 
-local function cron() 
+local function th3boss() 
   --clear that table on the top of the plugins 
    kicktable = {} 
 end 
 
 return { 
   patterns = {}, 
-  cron = cron, 
+  cron = th3boss, 
   pre_process = pre_process 
 } 
 

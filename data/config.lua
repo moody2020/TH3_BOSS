@@ -63,7 +63,6 @@ do local _ = {
     "addreplay",
     "addtime",
     "tagall",
-    "lock_replay",
     "design"
   },
   help_text = "",

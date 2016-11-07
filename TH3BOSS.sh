@@ -5,7 +5,7 @@ NONVOLUNTARYCHECK=0
 VOLUNTARY=1
 VOLUNTARYCHECK=0
 I=1
-BOT=TH3_BOSS # You can put here other bots. Also you can change it to run more than one bot in the same server.
+BOT=TH3BOSS # You can put here other bots. Also you can change it to run more than one bot in the same server.
 RELOADTIME=5  # Time between checking cpu calls of the cli process. Set the value high if your bot does not receive lots of messages.
 
 

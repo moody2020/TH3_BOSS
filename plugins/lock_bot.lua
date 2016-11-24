@@ -87,3 +87,4 @@ return {
     '^!!tgservice (chat_add_user_link)$'
   },
   run = mohammed
+}

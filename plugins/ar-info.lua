@@ -8,7 +8,7 @@
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
 --]]
 do
-local Arian = 206839802 --put your id here(BOT OWNER ID)
+local Arian = 237696036 --put your id here(BOT OWNER ID)
 
 local function setrank(msg, name, value) -- setrank function
   local hash = nil
@@ -29,34 +29,35 @@ local function res_user_callback(extra, success, result) -- /info <username> fun
    else
    Username = '----'
   end
-    local text = '🔹 الاسم : '..(result.first_name or '')..' '..(result.last_name or '')..'\n'
-               ..'🔹 المعرف : '..Username..'\n'
-               ..'🔹 ايدي : '..result.id..'\n\n'
-               ..'🔹 اسم المجموعه : '..msg.to.title..'\n'
-               ..'🔹 ايدي المجموعه : '..msg.to.id..'\n'
+    local text = '💢 الاسم : '..(result.first_name or '')..' '..(result.last_name or '')..'\n'
+               ..'💢 المعرف : '..Username..'\n'
+               ..'💢 ايدي : '..result.id..'\n\n'
+               ..'💢 اسم المجموعه : '..msg.to.title..'\n'
+               ..'💢 ايدي المجموعه : '..msg.to.id..'\n'
 	local hash = 'rank:'..extra.chat2..':variables'
 	local value = redis:hget(hash, result.id)
     if not value then
 	 if result.id == tonumber(Arian) then
-	   text = text..'🔹 رتبتك : Executive Admin \n\n'
+	   text = text..'💢 رتبتك : Executive Admin \n\n'
 	  elseif is_sudo(result.id) then
-	   text = text..'🔹 رتبتك :  المطور مالتي 😻🙊\n\n'
+	   text = text..'💢 رتبتك :  المطور مالتي 😻🙊\n\n'
 	  elseif is_owner(result.id, extra.chat2) then
-	   text = text..'🔹 رتبتك :  مدير المجموعه 🌺😍\n\n'
+	   text = text..'💢 رتبتك :  مدير المجموعه 🌺😍\n\n'
 	  elseif is_momod(result.id, extra.chat2) then
-	   text = text..'🔹 رتبتك :  ادمن ☺️\n\n'
+	   text = text..'💢 رتبتك :  ادمن ☺️\n\n'
       else
-	   text = text..'🔹 رتبتك :  مجرد عضو 😒💔 \n\n'
+	   text = text..'💢 رتبتك :  مجرد عضو 😒💔 \n\n'
 	 end
    else
-   text = text..'🔹 رتبتك : '..value..'\n\n'
+   text = text..'💢 رتبتك : '..value..'\n\n'
   end
   local uhash = 'user:'..result.id
   local user = redis:hgetall(uhash)
   local um_hash = 'msgs:'..result.id..':'..extra.chat2
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
-  text = text..'🔹 عدد الرسائل المرسله : '..user_info_msgs..'\n\n'
-  text = text..'🔹 #الـمطـور : MOHAMMED HISHAM\n🔹 #حساب المطور : @TH3BOSS'  send_msg(extra.receiver, text, ok_cb,  true)
+  text = text..'💢 عدد الرسائل المرسله : '..user_info_msgs..'\n'
+  text = text..'\n مـطـور الـسـورس\n الــــزعـــيـــــم > @TH3BOSS 💢'  
+  send_msg(extra.receiver, text, ok_cb,  true)
   else
 	send_msg(extra.receiver, ' Username not found.', ok_cb, false)
   end
@@ -69,34 +70,35 @@ local function action_by_id(extra, success, result)  -- /info <ID> function
    else
    Username = '----'
  end
-   local text = '🔹 الاسم : '..(result.first_name or '')..' '..(result.last_name or '')..'\n'
-               ..'🔹 المعرف : '..Username..'\n'
-               ..'🔹 ايدي : '..result.id..'\n\n'
-               ..'🔹 ايدي المجموعه : '..msg.to.id..'\n'
-               ..'🔹 اسم المجموعه : '..msg.to.title..'\n'
+   local text = '💢 الاسم : '..(result.first_name or '')..' '..(result.last_name or '')..'\n'
+               ..'💢 المعرف : '..Username..'\n'
+               ..'💢 ايدي : '..result.id..'\n\n'
+               ..'💢 ايدي المجموعه : '..msg.to.id..'\n'
+               ..'💢 اسم المجموعه : '..msg.to.title..'\n'
   local hash = 'rank:'..extra.chat2..':variables'
   local value = redis:hget(hash, result.id)
   if not value then
 	 if result.id == tonumber(Arian) then
-	   text = text..'🔹 رتبتك : Executive Admin \n\n'
+	   text = text..'💢 رتبتك : Executive Admin \n\n'
 	  elseif is_sudo(result.id) then
-	   text = text..'🔹 رتبتك :  المطور مالتي 😻🙊\n\n'
+	   text = text..'💢 رتبتك :  المطور مالتي 😻🙊\n\n'
 	  elseif is_owner(result.id, extra.chat2) then
-	   text = text..'🔹 رتبتك :  مدير المجموعه 🌺😍\n\n'
+	   text = text..'💢 رتبتك :  مدير المجموعه 🌺😍\n\n'
 	  elseif is_momod(result.id, extra.chat2) then
-	   text = text..'🔹 رتبتك :  ادمن ☺️\n\n'
+	   text = text..'💢 رتبتك :  ادمن ☺️\n\n'
 	  else
-	   text = text..'🔹 رتبتك :  مجرد عضو 😒💔\n\n'
+	   text = text..'💢 رتبتك :  مجرد عضو 😒💔\n\n'
 	  end
    else
-    text = text..'🔹 رتبتك : '..value..'\n\n'
+    text = text..'💢 رتبتك : '..value..'\n\n'
   end
   local uhash = 'user:'..result.id
   local user = redis:hgetall(uhash)
   local um_hash = 'msgs:'..result.id..':'..extra.chat2
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
-  text = text..'🔹 عدد الرسائل المرسله : '..user_info_msgs..'\n\n'
-  text = text..'🔹 #الـمطـور : MOHAMMED HISHAM\n🔹 #حساب المطور : @TH3BOSS'  send_msg(extra.receiver, text, ok_cb,  true)
+  text = text..'💢 عدد الرسائل المرسله : '..user_info_msgs..'\n'
+  text = text..'\n مـطـور الـسـورس\n الــــزعـــيـــــم > @TH3BOSS 💢'
+  send_msg(extra.receiver, text, ok_cb,  true)
   else
   send_msg(extra.receiver, 'id not found.\nuse : /info @username', ok_cb, false)
   end
@@ -108,33 +110,34 @@ local function action_by_reply(extra, success, result)-- (reply) /info  function
 		   else
 		   Username = '----'
 		 end
-  local text = '🔹 الاسم : '..(result.from.first_name or '')..' '..(result.from.last_name or '')..'\n'
-               ..'🔹 المعرف : '..Username..'\n'
-               ..'🔹 ايدي : '..result.from.id..'\n\n'
+  local text = '💢 الاسم : '..(result.from.first_name or '')..' '..(result.from.last_name or '')..'\n'
+               ..'💢 المعرف : '..Username..'\n'
+               ..'💢 ايدي : '..result.from.id..'\n\n'
 	local hash = 'rank:'..result.to.id..':variables'
 		local value = redis:hget(hash, result.from.id)
 		 if not value then
 		    if result.from.id == tonumber(Arian) then
-		       text = text..'🔹 رتبتك :Executive Admin \n\n'
+		       text = text..'💢 رتبتك :Executive Admin \n\n'
 		     elseif is_sudo(result.from.id) then
-		       text = text..'🔹 رتبتك :  المطور مالتي 😻🙊\n\n'
+		       text = text..'💢 رتبتك :  المطور مالتي 😻🙊\n\n'
 		     elseif is_owner(result.from.id, result.to.id) then
-		       text = text..'🔹 رتبتك :  مدير المجموعه 🌺😍\n\n'
+		       text = text..'💢 رتبتك :  مدير المجموعه 🌺😍\n\n'
 		     elseif is_momod(result.from.id, result.to.id) then
-		       text = text..'🔹 رتبتك :  ادمن ☺️\n\n'
+		       text = text..'💢 رتبتك :  ادمن ☺️\n\n'
 		 else
-		       text = text..'🔹 رتبتك :  مجرد عضو 😒💔\n\n'
+		       text = text..'💢 رتبتك :  مجرد عضو 😒💔\n\n'
 			end
 		  else
-		   text = text..'🔹 رتبتك : '..value..'\n\n'
+		   text = text..'💢 رتبتك : '..value..'\n\n'
 		 end
          local user_info = {} 
   local uhash = 'user:'..result.from.id
   local user = redis:hgetall(uhash)
   local um_hash = 'msgs:'..result.from.id..':'..result.to.id
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
-  text = text..'🔹 عدد الرسائل المرسله : '..user_info_msgs..'\n\n'
-  text = text..'🔹 #الـمطـور : MOHAMMED HISHAM\n🔹 #حساب المطور : @TH3BOSS'  send_msg(extra.receiver, text, ok_cb, true)
+  text = text..'💢 عدد الرسائل المرسله : '..user_info_msgs..'\n'
+  text = text..'\n مـطـور الـسـورس\n الــــزعـــيـــــم > @TH3BOSS 💢'
+  send_msg(extra.receiver, text, ok_cb, true)
 end
 
 local function action_by_reply2(extra, success, result)
@@ -147,7 +150,7 @@ local function run(msg, matches)
   local hash = 'usecommands:'..msg.from.id..':'..msg.to.id
   redis:incr(hash)
   if not is_sudo(msg) then
-    return "😠 لآَ تـمسـلتَ أَلمطـور فـقطَ يفَـعل هأَذأَ ✔️👍"
+    return " 💢 لا تلعب بكيفك فقط الـمـطـور يفعل هذا "
   end
   local receiver = get_receiver(msg)
   local Reply = msg.reply_id
@@ -173,42 +176,42 @@ local function run(msg, matches)
    else
    Username = '----'
    end
-   local text = '🔹 الاسم الاول : '..(msg.from.first_name or '----')..'\n'
-   local text = text..'🔹 الاسم الاخير : '..(msg.from.last_name or '----')..'\n'	
-   local text = text..'🔹  المعرف : '..Username..'\n'
-   local text = text..'🔹 رقم هاتفك : '..(msg.from.phone or 'لايوجد')..'\n'	
-   local text = text..'🔹 ايدي : '..msg.from.id..'\n'
-   local text = text..'🔹 اسم المجموعه : '..msg.to.title..'\n'
-   local text = text..'🔹 ايدي المجموعه : '..msg.to.id..'\n'
+   local text = '💢 الاسم الاول : '..(msg.from.first_name or '----')..'\n'
+   local text = text..'💢 الاسم الاخير : '..(msg.from.last_name or '----')..'\n'	
+   local text = text..'💢  المعرف : '..Username..'\n'
+   local text = text..'💢 رقم هاتفك : '..(msg.from.phone or 'لايوجد')..'\n'	
+   local text = text..'💢 ايدي : '..msg.from.id..'\n'
+   local text = text..'💢 اسم المجموعه : '..msg.to.title..'\n'
+   local text = text..'💢 ايدي المجموعه : '..msg.to.id..'\n'
    local hash = 'rank:'..msg.to.id..':variables'
 	if hash then
 	  local value = redis:hget(hash, msg.from.id)
 	  if not value then
 		if msg.from.id == tonumber(Arian) then
-		 text = text..'🔹 رتبتك : Executive Admin \n\n'
+		 text = text..'💢 رتبتك : Executive Admin \n\n'
 		elseif is_sudo(msg) then
-		 text = text..'🔹 رتبتك :  المطور مالتي 😻🙊\n\n'
+		 text = text..'💢 رتبتك :  المطور مالتي 😻🙊\n\n'
 		elseif is_owner(msg) then
-		 text = text..'🔹 رتبتك :  مدير المجموعه 🌺😍\n\n'
+		 text = text..'💢 رتبتك :  مدير المجموعه 🌺😍\n\n'
 		elseif is_momod(msg) then
-		 text = text..'🔹 رتبتك :  ادمن ☺️\n\n'
+		 text = text..'💢 رتبتك :  ادمن ☺️\n\n'
 		else
-		 text = text..'🔹 رتبتك :  مجرد عضو 😒💔\n\n'
+		 text = text..'💢 رتبتك :  مجرد عضو 😒💔\n\n'
 		end
 	  else
-	   text = text..'🔹 رتبتك : '..value..'\n'
+	   text = text..'💢 رتبتك : '..value..'\n'
 	  end
 	end
 	 local uhash = 'user:'..msg.from.id
  	 local user = redis:hgetall(uhash)
   	 local um_hash = 'msgs:'..msg.from.id..':'..msg.to.id
 	 user_info_msgs = tonumber(redis:get(um_hash) or 0)
-	 text = text..'🔹 عدد الرسائل المرسله : '..user_info_msgs..'\n\n'
+	 text = text..'💢 عدد الرسائل المرسله : '..user_info_msgs..'\n'
     if msg.to.type == 'chat' then
-	 text = text..'🔹 اسم المجموعه : '..msg.to.title..'\n'
-     text = text..'🔹 ايدي المجموعه : '..msg.to.id
+	 text = text..'💢 اسم المجموعه : '..msg.to.title..'\n'
+     text = text..'💢 ايدي المجموعه : '..msg.to.id
     end
-  text = text..'🔹 #الـمطـور : MOHAMMED HISHAM\n🔹 #حساب المطور : @TH3BOSS'
+  text = text..'\n مـطـور الـسـورس\n الــــزعـــيـــــم > @TH3BOSS 💢'
     return send_msg(receiver, text, ok_cb, true)
     end
   end

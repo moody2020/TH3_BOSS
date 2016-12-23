@@ -24,7 +24,7 @@ local reply_id = msg['id']
      if is_momod(msg) and matches[1]== 'قفل' and matches[2]== 'اعاده توجيه' then 
          local fwd = 'mate:'..msg.to.id 
          redis:set(fwd, true) 
-         local text = 'تم ☑️ قفل 🔒 اعاده توجيه ✋😽\n📌 Order By : @'..msg.from.username..'\n📌 Order By : '.. msg.from.id..'\n'
+         local text = 'تم ☑️ قفل 🔒 اعاده توجيه \n📌 Order By : @'..(msg.from.username or " لا يــــوجــــد ")..'\n📌 Order By : '.. msg.from.id..'\n'
          return reply_msg(reply_id, text, ok_cb, false) 
          end 
 local reply_id = msg['id'] 
@@ -36,7 +36,7 @@ local reply_id = msg['id']
 if is_momod(msg) and matches[1]== 'فتح' and matches[2]== 'اعاده توجيه' then 
     local fwd = 'mate:'..msg.to.id 
     redis:del(fwd) 
-    local text = 'تم ☑️ فتح 🔓 اعاده توجيه ✋😽\n📌 Order By : @'..msg.from.username..'\n📌 Order By : '.. msg.from.id..'\n'
+    local text = 'تم ☑️ فتح 🔓 اعاده توجيه \n📌 Order By : @'..(msg.from.username or " لا يــــوجــــد ")..'\n📌 Order By : '.. msg.from.id..'\n'
     return reply_msg(reply_id, text, ok_cb, false) 
 end 
 

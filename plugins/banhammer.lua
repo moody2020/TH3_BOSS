@@ -121,18 +121,18 @@ local function kick_ban_res(extra, success, result)
 		 kick_user(member_id, chat_id)
       elseif get_cmd == 'حظر' then
         if is_momod2(member_id, chat_id) and not is_admin2(sender) then
-			send_large_msg(receiver, "لا تسطيع حضر الادمنية او المدراء ❌")
+			send_large_msg(receiver, "لا تسطيع حظر الادمنية او المدراء ❌")
 			return
         end
-        send_large_msg(receiver, 'العضو @'..member..' ['..member_id..'] ☑️ تم حضره')
+        send_large_msg(receiver, 'العضو @'..member..' ['..member_id..'] ☑️ تم حظره')
 		ban_user(member_id, chat_id)
       elseif get_cmd == 'الغاء الحظر' then
-        send_large_msg(receiver, 'العضو @'..member..' ['..member_id..'] ☑️ راح الحضر منة')
+        send_large_msg(receiver, 'العضو @'..member..' ['..member_id..'] ☑️ راح الحظر منة')
         local hash =  'banned:'..chat_id
         redis:srem(hash, member_id)
         return 'العضو '..user_id..' ☑️ راح الحضر منة'
       elseif get_cmd == 'حظر عام' then
-        send_large_msg(receiver, 'العضو @'..member..' ['..member_id..'] ☑️ تم حضره عام ')
+        send_large_msg(receiver, 'العضو @'..member..' ['..member_id..'] ☑️ تم حظره عام ')
 		banall_user(member_id)
       elseif get_cmd == 'الغاء العام' then
         send_large_msg(receiver, 'العضو @'..member..' ['..member_id..'] ☑️ راح العام منة')
@@ -202,7 +202,7 @@ local support_id = msg.from.id
 		local receiver = get_receiver(msg)
         savelog(msg.to.id, name.." ["..msg.from.id.."] baned user ".. matches[2])
         ban_user(matches[2], msg.to.id)
-		send_large_msg(receiver, 'العضو ['..matches[2]..'] ☑️ تم حضره')
+		send_large_msg(receiver, 'العضو ['..matches[2]..'] ☑️ تم حظره')
       else
 		local cbres_extra = {
 		chat_id = msg.to.id,
@@ -230,7 +230,7 @@ local support_id = msg.from.id
         	local print_name = user_print_name(msg.from):gsub("‮", "")
 			local name = print_name:gsub("_", "")
         	savelog(msg.to.id, name.." ["..msg.from.id.."] unbaned user ".. matches[2])
-        	return 'العضو '..user_id..' ☑️ راح الحضر منه'
+        	return 'العضو '..user_id..' ☑️ راح الحظر منه'
       else
 		local cbres_extra = {
 			chat_id = msg.to.id,
@@ -296,7 +296,7 @@ end
          	return false
         end
         	banall_user(targetuser)
-       		return 'العضو ['..user_id..' ] ☑️ تم حضره عام'
+       		return 'العضو ['..user_id..' ] ☑️ تم حظره عام'
      else
 	local cbres_extra = {
 		chat_id = msg.to.id,

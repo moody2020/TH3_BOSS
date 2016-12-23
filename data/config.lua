@@ -1,5 +1,5 @@
 do local _ = {
-  about_text = "📌 ️اهــــــــلا و ســــــــهلا بــــك فـــي ســـــورس الــــزعـــــــيـــــم  V10\n For more information Subscribe to the channel @llDEV1ll \n https://github.com/moody2020/TH3BOSS\n\n 📌️ Dev @TH3BOSS\n\n📌️ Dev Bot @ll60Kllbot\n\n  ️channel @llDEV1ll ",
+  about_text = "ߓ̠️اهــــــــلا و ســــــــهلا بــــك فـــي ســـــورس الــــزعـــــــيـــــم  V10\n For more information Subscribe to the channel @llDEV1ll \n https://github.com/moody2020/TH3BOSS\n\n ߓ̯菠 Dev @TH3BOSS\n\nߓ̯菠Dev Bot @ll60Kllbot\n\n ߓ̠️channel @llDEV1ll ",
   enabled_plugins = {
     "badword",
     "admin",
@@ -61,7 +61,9 @@ do local _ = {
     "addtime",
     "tagall",
     "design",
+    "replay",
     "delete",
+    "delete1",
     "TH3BOSS"
   },
   help_text = "",
@@ -70,7 +72,7 @@ do local _ = {
   moderation = {
     data = "data/moderation.json"
   },
-sudo_users = {
+  sudo_users = {
     226861861
   }
 }

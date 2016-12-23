@@ -31,7 +31,7 @@ local mohammed = msg['id']
     if matches[1] == 'قفل الوسائط'  and is_momod(msg) then 
                     local th3boss= 'mate:'..msg.to.id 
                     redis:set(th3boss, true) 
-local boss = '☑️ تم قفل 🔒 جميع الوسائط 🔕 \n📌 Order By : @'..msg.from.username..'\n📌 Order By : '.. msg.from.id..'\n'
+local boss = '☑️ تم قفل 🔒 جميع الوسائط 🔕 \n📌 Order By : @'..(msg.from.username or " لا يــــوجــــد ")..'\n📌 Order By : '.. msg.from.id..'\n'
 reply_msg(mohammed, boss, ok_cb, true) 
 elseif matches[1] == 'قفل الوسائط' and not is_momod(msg) then 
 local moody = 'للـمـشـرفـيـن فـقـط 👮🖕🏿' 
@@ -39,7 +39,7 @@ reply_msg(mohammed, moody, ok_cb, true)
   elseif is_momod(msg) and matches[1] == 'فتح الوسائط' then 
       local th3boss= 'mate:'..msg.to.id 
       redis:del(th3boss) 
-local boss = '☑️ تم فتح جميع الوسائط 🔓🔔 \n📌 Order By : @'..msg.from.username..'\n📌 Order By : '.. msg.from.id..'\n'
+local boss = '☑️ تم فتح جميع الوسائط 🔓🔔\n📌 Order By : @'..(msg.from.username or " لا يــــوجــــد ")..'\n📌 Order By : '.. msg.from.id..'\n'
 reply_msg(mohammed, boss, ok_cb, true) 
 elseif matches[1] == 'فتح الوسائط' and not is_momod(msg) then 
 local moody= 'للـمـشـرفـيـن فـقـط 👮🖕🏿' 
@@ -55,5 +55,3 @@ return {
 run = MOHAMMED, 
     pre_process = pre_process 
 } 
-
-end

@@ -855,4 +855,4 @@ patterns = {
 run = run
 }
 end
--- arabic : @SAJJADNOORI
+-- By @TH3BOSS

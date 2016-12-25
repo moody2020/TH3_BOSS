@@ -82,7 +82,7 @@ end
 local function run(msg, matches)
   if matches[2] == 'منع' then
   if not is_momod(msg) then
-   return 'only for moderators'
+   return 'للـمـشـرفـيـن فـقـط 👮🖕🏿'
   end
   local name = string.sub(matches[3], 1, 50)
 

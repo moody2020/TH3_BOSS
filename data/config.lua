@@ -1,7 +1,7 @@
 do local _ = {
-  about_text = "ߓ̠️اهــــــــلا و ســــــــهلا بــــك فـــي ســـــورس الــــزعـــــــيـــــم  V10\n For more information Subscribe to the channel @llDEV1ll \n https://github.com/moody2020/TH3BOSS\n\n ߓ̯菠 Dev @TH3BOSS\n\nߓ̯菠Dev Bot @ll60Kllbot\n\n ߓ̠️channel @llDEV1ll ",
+  about_text = "▫️Welcome To\n TH3BOSS V10 \nFor More Information Subscribe To The Channel @llDEV1ll \n https://github.com/moody2020/TH3BOSS\n\n▫️Dev @TH3BOSS\n\n▫️ Dev Bot @ll60Kllbot\n\n▫️ channel @llDEV1ll ",
   enabled_plugins = {
-    "badword",
+      "badword",
     "admin",
     "ingroup",
     "stats",
@@ -73,7 +73,7 @@ do local _ = {
     data = "data/moderation.json"
   },
   sudo_users = {
-    226861861
+    226861861,
   }
 }
 return _

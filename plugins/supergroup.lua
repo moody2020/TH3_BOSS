@@ -1053,7 +1053,7 @@ local function set_supergroup_photo(msg, success, result)
     channel_set_photo(receiver, file, ok_cb, false) 
     data[tostring(msg.to.id)]['settings']['set_photo'] = file 
     save_data(_config.moderation.data, data) 
-    send_large_msg(receiver, 'Photo saved!', ok_cb, false) 
+    send_large_msg(receiver, 'تم ☑️ حفظ الصوره 📌😽', ok_cb, false) 
   else 
     print('Error downloading: '..msg.id) 
     send_large_msg(receiver, 'Failed, please try again!', ok_cb, false) 

@@ -1245,7 +1245,7 @@ return "📌 مدير المجموعة المحترم 📌["..group_owner..']'
             local function callback_link (extra , success, result) 
             local receiver = get_receiver(msg) 
                 if success == 0 then 
-                    send_large_msg(receiver, '📌 ��ذرٱ ⚠️لا يمكنك تغيير الرابط ❌\nالمجموعه 👥 ليست من صنع البوت ❌\n\nيرجى استخدام ❗️الرابط الخاص بها في اعدادات المجموعه 🚶') 
+                    send_large_msg(receiver, '📌عـذرآ ⚠️لا يمكنك تغيير الرابط ❌\nالمجموعه 👥 ليست من صنع البوت ❌\n\nيرجى استخدام ❗️الرابط الخاص بها في اعدادات المجموعه 🚶') 
                     data[tostring(msg.to.id)]['settings']['set_link'] = nil 
                     save_data(_config.moderation.data, data) 
                 else 
@@ -1265,9 +1265,9 @@ return "📌 مدير المجموعة المحترم 📌["..group_owner..']'
         end 
 
         if msg.text then 
-            if msg.text:match("^(https://telegram.me/joinchat/%S+)$") and data[tostring(msg.to.id)]['settings']['set_link'] == 'waiting' and is_owner(msg) then 
-                data[tostring(msg.to.id)]['settings']['set_link'] = msg.text 
-                save_data(_config.moderation.data, data) 
+            if msg.text:match("^(https://telegram.me/joinchat/%S+)$") and data[tostring(msg.to.id)]['settings']['set_link'] == 'waiting' and is_owner(msg) then
+                data[tostring(msg.to.id)]['settings']['set_link'] = msg.text
+                save_data(_config.moderation.data, data)
                 return "تم ☑️ حفظ الرابط 📌😽" 
             end 
         end 

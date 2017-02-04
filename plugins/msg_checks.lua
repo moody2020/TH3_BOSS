@@ -1,285 +1,415 @@
---Begin msg_checks.lua
---Begin pre_process function
+--Begin msg_checks.lua By @TH3BOSS
+local TIME_CHECK = 2
 local function pre_process(msg)
--- Begin 'RondoMsgChecks' text checks by @rondoozle
-if is_chat_msg(msg) or is_super_group(msg) then
-	if msg and not is_momod(msg) and not is_whitelisted(msg.from.id) then --if regular user
-	local data = load_data(_config.moderation.data)
-	local print_name = user_print_name(msg.from):gsub("‮", "") -- get rid of rtl in names
-	local name_log = print_name:gsub("_", " ") -- name for log
-	local to_chat = msg.to.type == 'chat'
-	if data[tostring(msg.to.id)] and data[tostring(msg.to.id)]['settings'] then
-		settings = data[tostring(msg.to.id)]['settings']
+local data = load_data(_config.moderation.data)
+local chat = msg.chat_id_
+local user = msg.sender_user_id_
+local is_channel = gp_type(chat) == "channel"
+local is_chat = gp_type(chat) == "chat"
+local auto_leave = 'auto_leave_bot'
+local data = load_data(_config.moderation.data)
+ msg.text = msg.content_.text_
+  local groups = 'groups'
+   if is_channel or is_chat then
+    if msg.text then
+  if msg.text:match("(.*)") then
+    if not data[tostring(chat)] and not redis:get(auto_leave) and not is_admin(msg) then
+  tdcli.sendMessage(msg.chat_id_, "", 0, "_This Is Not One Of My Groups_*", 0, "md")
+  tdcli.changeChatMemberStatus(chat, our_id, 'Left', dl_cb, nil)
+      end
+   end
+end
+    if data[tostring(chat)] and data[tostring(chat)]['mutes'] then
+		mutes = data[tostring(chat)]['mutes']
 	else
 		return
 	end
-	if settings.lock_arabic then
-		lock_arabic = settings.lock_arabic
+	if mutes.mute_all then
+		mute_all = mutes.mute_all
 	else
-		lock_arabic = 'no'
+		mute_all = 'no'
 	end
-	if settings.lock_rtl then
-		lock_rtl = settings.lock_rtl
+	if mutes.mute_gif then
+		mute_gif = mutes.mute_gif
 	else
-		lock_rtl = 'no'
+		mute_gif = 'no'
+	end
+   if mutes.mute_photo then
+		mute_photo = mutes.mute_photo
+	else
+		mute_photo = 'no'
+	end
+	if mutes.mute_sticker then
+		mute_sticker = mutes.mute_sticker
+	else
+		mute_sticker = 'no'
+	end
+	if mutes.mute_contact then
+		mute_contact = mutes.mute_contact
+	else
+		mute_contact = 'no'
+	end
+	if mutes.mute_inline then
+		mute_inline = mutes.mute_inline
+	else
+		mute_inline = 'no'
+	end
+	if mutes.mute_game then
+		mute_game = mutes.mute_game
+	else
+		mute_game = 'no'
+	end
+	if mutes.mute_text then
+		mute_text = mutes.mute_text
+	else
+		mute_text = 'no'
+	end
+	if mutes.mute_forward then
+		mute_forward = mutes.mute_forward
+	else
+		mute_forward = 'no'
+	end
+	if mutes.mute_location then
+		mute_location = mutes.mute_location
+	else
+		mute_location = 'no'
+	end
+   if mutes.mute_document then
+		mute_document = mutes.mute_document
+	else
+		mute_document = 'no'
+	end
+	if mutes.mute_voice then
+		mute_voice = mutes.mute_voice
+	else
+		mute_voice = 'no'
+	end
+	if mutes.mute_audio then
+		mute_audio = mutes.mute_audio
+	else
+		mute_audio = 'no'
+	end
+	if mutes.mute_video then
+		mute_video = mutes.mute_video
+	else
+		mute_video = 'no'
+	end
+	if mutes.mute_tgservice then
+		mute_tgservice = mutes.mute_tgservice
+	else
+		mute_tgservice = 'no'
+	end
+	if data[tostring(chat)] and data[tostring(chat)]['settings'] then
+		settings = data[tostring(chat)]['settings']
+	else
+		return
 	end
 	if settings.lock_link then
 		lock_link = settings.lock_link
 	else
 		lock_link = 'no'
 	end
-	if settings.lock_member then
-		lock_member = settings.lock_member
+	if settings.lock_tag then
+		lock_tag = settings.lock_tag
 	else
-		lock_member = 'no'
+		lock_tag = 'no'
 	end
-	if settings.lock_spam then
+	if settings.lock_arabic then
+		lock_arabic = settings.lock_arabic
+	else
+		lock_arabic = 'no'
+	end
+	if settings.lock_mention then
+		lock_mention = settings.lock_mention
+	else
+		lock_mention = 'no'
+	end
+		if settings.lock_edit then
+		lock_edit = settings.lock_edit
+	else
+		lock_edit = 'no'
+	end
+		if settings.lock_spam then
 		lock_spam = settings.lock_spam
 	else
 		lock_spam = 'no'
 	end
-	if settings.lock_sticker then
-		lock_sticker = settings.lock_sticker
+	if settings.flood then
+		lock_flood = settings.flood
 	else
-		lock_sticker = 'no'
+		lock_flood = 'no'
 	end
-	if settings.lock_contacts then
-		lock_contacts = settings.lock_contacts
+	if settings.lock_markdown then
+		lock_markdown = settings.lock_markdown
 	else
-		lock_contacts = 'no'
+		lock_markdown = 'no'
 	end
-	if settings.strict then
-		strict = settings.strict
+	if settings.lock_webpage then
+		lock_webpage = settings.lock_webpage
 	else
-		strict = 'no'
+		lock_webpage = 'no'
 	end
-		if msg and not msg.service and is_muted(msg.to.id, 'All: yes') or is_muted_user(msg.to.id, msg.from.id) and not msg.service then
-			delete_msg(msg.id, ok_cb, false)
-			if to_chat then
-			--	kick_user(msg.from.id, msg.to.id)
-			end
-		end
-		if msg.text then -- msg.text checks
+  if msg.adduser or msg.joinuser or msg.deluser then
+  if mute_tgservice == "yes" then
+del_msg(msg.chat_id_, tonumber(msg.id_))
+  end
+end
+      if not is_mod(msg) then
+if msg.content_.caption_ then
+if lock_link == "yes" then
+		local is_link_caption = msg.content_.caption_:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.content_.caption_:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/") or msg.content_.caption_:match("[Tt][Ll][Gg][Rr][Mm].[Dd][Oo][Gg]/") or msg.content_.caption_:match("[Tt].[Mm][Ee]/")
+if is_link_caption then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+       end
+    end
+ end
+if lock_arabic == "yes" then
+		local is_arabic_caption = msg.content_.caption_:match("[\216-\219][\128-\191]")
+if is_arabic_caption then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+       end
+    end
+ end
+if is_filter(msg, msg.content_.caption_) then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+      end
+    end
+if lock_tag == "yes" then
+local tag_caption = msg.content_.caption_:match("@") or msg.content_.caption_:match("#")
+if tag_caption then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+      end
+    end
+  end
+end
+if msg.edited and lock_edit == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+    end
+  end
+if msg.forward_info_ and mute_forward == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+    end
+  end
+if msg.photo_ and mute_photo == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+    if msg.video_ and mute_video == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+    if msg.document_ and mute_document == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+    if msg.sticker_ and mute_sticker == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+    if msg.animation_ and mute_gif == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+    if msg.contact_ and mute_contact == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+    if msg.location_ and mute_location == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+    if msg.voice_ and mute_voice == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+    if tonumber(msg.via_bot_user_id_) ~= 0 and mute_inline == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+    if msg.game_ and mute_game == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+    if msg.audio_ and mute_audio == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+if msg.text then
 			local _nl, ctrl_chars = string.gsub(msg.text, '%c', '')
 			 local _nl, real_digits = string.gsub(msg.text, '%d', '')
 			if lock_spam == "yes" and string.len(msg.text) > 2049 or ctrl_chars > 40 or real_digits > 2000 then
-				delete_msg(msg.id, ok_cb, false)
-				if strict == "yes" or to_chat then
-					delete_msg(msg.id, ok_cb, false)
-					kick_user(msg.from.id, msg.to.id)
-				end
-			end
-			local is_link_msg = msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.text:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
-			local is_bot = msg.text:match("?[Ss][Tt][Aa][Rr][Tt]=")
-			if is_link_msg and lock_link == "yes" and not is_bot then
-				delete_msg(msg.id, ok_cb, false)
-				if strict == "yes" or to_chat then
-					kick_user(msg.from.id, msg.to.id)
-				end
-			end
-			local is_squig_msg = msg.text:match("[\216-\219][\128-\191]")
-			if is_squig_msg and lock_arabic == "yes" then
-				delete_msg(msg.id, ok_cb, false)
-				if strict == "yes" or to_chat then
-					kick_user(msg.from.id, msg.to.id)
-				end
-			end
-			local print_name = msg.from.print_name
-			local is_rtl = print_name:match("‮") or msg.text:match("‮")
-			if is_rtl and lock_rtl == "yes" then
-				delete_msg(msg.id, ok_cb, false)
-				if strict == "yes" or to_chat then
-					kick_user(msg.from.id, msg.to.id)
-				end
-			end
-			if is_muted(msg.to.id, "Text: yes") and msg.text and not msg.media and not msg.service then
-				delete_msg(msg.id, ok_cb, false)
-				if to_chat then
-					kick_user(msg.from.id, msg.to.id)
-				end
-			end
-		end
-		if msg.media then -- msg.media checks
-			if msg.media.title then
-				local is_link_title = msg.media.title:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.media.title:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
-				if is_link_title and lock_link == "yes" then
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-				local is_squig_title = msg.media.title:match("[\216-\219][\128-\191]")
-				if is_squig_title and lock_arabic == "yes" then
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-			end
-			if msg.media.description then
-				local is_link_desc = msg.media.description:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.media.description:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
-				if is_link_desc and lock_link == "yes" then
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-				local is_squig_desc = msg.media.description:match("[\216-\219][\128-\191]")
-				if is_squig_desc and lock_arabic == "yes" then
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-			end
-			if msg.media.caption then -- msg.media.caption checks
-				local is_link_caption = msg.media.caption:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.media.caption:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
-				if is_link_caption and lock_link == "yes" then
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-				local is_squig_caption = msg.media.caption:match("[\216-\219][\128-\191]")
-					if is_squig_caption and lock_arabic == "yes" then
-						delete_msg(msg.id, ok_cb, false)
-						if strict == "yes" or to_chat then
-							kick_user(msg.from.id, msg.to.id)
-						end
-					end
-				local is_username_caption = msg.media.caption:match("^@[%a%d]")
-				if is_username_caption and lock_link == "yes" then
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-				if lock_sticker == "yes" and msg.media.caption:match("sticker.webp") then
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-			end
-			if msg.media.type:match("contact") and lock_contacts == "yes" then
-				delete_msg(msg.id, ok_cb, false)
-				if strict == "yes" or to_chat then
-					kick_user(msg.from.id, msg.to.id)
-				end
-			end
-			local is_photo_caption =  msg.media.caption and msg.media.caption:match("photo")--".jpg",
-			if is_muted(msg.to.id, 'Photo: yes') and msg.media.type:match("photo") or is_photo_caption and not msg.service then
-				delete_msg(msg.id, ok_cb, false)
-				if strict == "yes" or to_chat then
-					--	kick_user(msg.from.id, msg.to.id)
-				end
-			end
-			local is_gif_caption =  msg.media.caption and msg.media.caption:match(".mp4")
-			if is_muted(msg.to.id, 'Gifs: yes') and is_gif_caption and msg.media.type:match("document") and not msg.service then
-				delete_msg(msg.id, ok_cb, false)
-				if strict == "yes" or to_chat then
-					--	kick_user(msg.from.id, msg.to.id)
-				end
-			end
-			if is_muted(msg.to.id, 'Audio: yes') and msg.media.type:match("audio") and not msg.service then
-				delete_msg(msg.id, ok_cb, false)
-				if strict == "yes" or to_chat then
-					kick_user(msg.from.id, msg.to.id)
-				end
-			end
-			local is_video_caption = msg.media.caption and msg.media.caption:lower(".mp4","video")
-			if  is_muted(msg.to.id, 'Video: yes') and msg.media.type:match("video") and not msg.service then
-				delete_msg(msg.id, ok_cb, false)
-				if strict == "yes" or to_chat then
-					kick_user(msg.from.id, msg.to.id)
-				end
-			end
-			if is_muted(msg.to.id, 'Documents: yes') and msg.media.type:match("document") and not msg.service then
-				delete_msg(msg.id, ok_cb, false)
-				if strict == "yes" or to_chat then
-					kick_user(msg.from.id, msg.to.id)
-				end
-			end
-		end
-		if msg.fwd_from then
-			if msg.fwd_from.title then
-				local is_link_title = msg.fwd_from.title:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.fwd_from.title:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
-				if is_link_title and lock_link == "yes" then
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-				local is_squig_title = msg.fwd_from.title:match("[\216-\219][\128-\191]")
-				if is_squig_title and lock_arabic == "yes" then
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-			end
-			if is_muted_user(msg.to.id, msg.fwd_from.peer_id) then
-				delete_msg(msg.id, ok_cb, false)
-			end
-		end
-		if msg.service then -- msg.service checks
-		local action = msg.action.type
-			if action == 'chat_add_user_link' then
-				local user_id = msg.from.id
-				local _nl, ctrl_chars = string.gsub(msg.text, '%c', '')
-				if string.len(msg.from.print_name) > 70 or ctrl_chars > 40 and lock_group_spam == 'yes' then
-					savelog(msg.to.id, name_log.." ["..msg.from.id.."] joined and Service Msg deleted (#spam name)")
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						savelog(msg.to.id, name_log.." ["..msg.from.id.."] joined and kicked (#spam name)")
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-				local print_name = msg.from.print_name
-				local is_rtl_name = print_name:match("‮")
-				if is_rtl_name and lock_rtl == "yes" then
-					savelog(msg.to.id, name_log.." User ["..msg.from.id.."] joined and kicked (#RTL char in name)")
-					kick_user(user_id, msg.to.id)
-				end
-				if lock_member == 'yes' then
-					savelog(msg.to.id, name_log.." User ["..msg.from.id.."] joined and kicked (#lockmember)")
-					kick_user(user_id, msg.to.id)
-					delete_msg(msg.id, ok_cb, false)
-				end
-			end
-			if action == 'chat_add_user' and not is_momod2(msg.from.id, msg.to.id) then
-				local user_id = msg.action.user.id
-				if string.len(msg.action.user.print_name) > 70 and lock_group_spam == 'yes' then
-					savelog(msg.to.id, name_log.." ["..msg.from.id.."] added ["..user_id.."]: Service Msg deleted (#spam name)")
-					delete_msg(msg.id, ok_cb, false)
-					if strict == "yes" or to_chat then
-						savelog(msg.to.id, name_log.." ["..msg.from.id.."] added ["..user_id.."]: added user kicked (#spam name) ")
-						delete_msg(msg.id, ok_cb, false)
-						kick_user(msg.from.id, msg.to.id)
-					end
-				end
-				local print_name = msg.action.user.print_name
-				local is_rtl_name = print_name:match("‮")
-				if is_rtl_name and lock_rtl == "yes" then
-					savelog(msg.to.id, name_log.." User ["..msg.from.id.."] added ["..user_id.."]: added user kicked (#RTL char in name)")
-					kick_user(user_id, msg.to.id)
-				end
-				if msg.to.type == 'channel' and lock_member == 'yes' then
-					savelog(msg.to.id, name_log.." User ["..msg.from.id.."] added ["..user_id.."]: added user kicked  (#lockmember)")
-					kick_user(user_id, msg.to.id)
-					delete_msg(msg.id, ok_cb, false)
-				end
-			end
-		end
-	end
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
 end
--- End 'RondoMsgChecks' text checks by @Rondoozle
-	return msg
+local link_msg = msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") or msg.text:match("[Tt].[Mm][Ee]/") or msg.text:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
+if link_msg
+and lock_link == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
 end
---End pre_process function
+local tag_msg = msg.text:match("@") or msg.text:match("#")
+if tag_msg and lock_tag == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+if is_filter(msg, msg.text) then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+      end
+    end
+local arabic_msg = msg.text:match("[\216-\219][\128-\191]")
+if arabic_msg and lock_arabic == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+if msg.text:match("(.*)")
+and mute_text == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+     end
+   end
+end
+if mute_all == "yes" then 
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
+if msg.content_.entities_ and msg.content_.entities_[0] then
+    if msg.content_.entities_[0].ID == "MessageEntityMentionName" then
+      if lock_mention == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+             end
+          end
+      end
+  if msg.content_.entities_[0].ID == "MessageEntityUrl" or msg.content_.entities_[0].ID == "MessageEntityTextUrl" then
+      if lock_webpage == "yes" then
+if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+             end
+          end
+      end
+  if msg.content_.entities_[0].ID == "MessageEntityBold" or msg.content_.entities_[0].ID == "MessageEntityCode" or msg.content_.entities_[0].ID == "MessageEntityPre" or msg.content_.entities_[0].ID == "MessageEntityItalic" then
+      if lock_markdown == "yes" then
+if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+             end
+          end
+      end
+ end
+if gp_type(chat) ~= 'pv' then
+  if lock_flood == "yes" then
+    local hash = 'user:'..user..':msgs'
+    local msgs = tonumber(redis:get(hash) or 0)
+        local NUM_MSG_MAX = 5
+        if data[tostring(chat)] then
+          if data[tostring(chat)]['settings']['num_msg_max'] then
+            NUM_MSG_MAX = tonumber(data[tostring(chat)]['settings']['num_msg_max'])
+          end
+        end
+    if msgs > NUM_MSG_MAX then
+  if is_mod(msg) then
+    return
+  end
+  if msg.adduser then
+    return
+  end
+if redis:get('sender:'..user..':flood') then
+return
+else
+   del_msg(msg.chat_id_, msg.id_)
+    kick_user(user, chat)
+  tdcli.sendMessage(msg.chat_id_, msg.id_, 0, "_User_ `[ "..user.." ]` _has been_ *kicked* _because of_ *flooding*", 0, "md")
+redis:setex('sender:'..user..':flood', 30, true)
+      end
+    end
+    redis:setex(hash, TIME_CHECK, msgs+1)
+               end
+           end
+      end
+   end
+end
 return {
 	patterns = {},
 	pre_process = pre_process
 }
 --End msg_checks.lua
---By @Rondoozle
+--By @TH3BOSS
+--By @lldev1ll
+--By @lllLUAlll
+--By @ll60Kllbot

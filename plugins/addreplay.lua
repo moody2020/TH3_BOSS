@@ -1,6 +1,6 @@
 --[[
-BY-@Sadik_alknani10
-BY_CH : @KINGTELE1
+BY-@RH3BOSS
+BY_CH : @llDEV1ll
 ]]
 
 local function get_variables_hash(msg)
